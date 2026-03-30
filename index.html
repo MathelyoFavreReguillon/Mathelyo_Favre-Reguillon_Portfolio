@@ -20,6 +20,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -39,9 +40,9 @@
     .nav{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:100;
       backdrop-filter: blur(16px);
-      background:rgba(244,241,239,.78);
+      background:rgba(244,241,239,.88);
       border-bottom:1px solid rgba(0,0,0,.06);
     }
 
@@ -49,26 +50,76 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:1rem;
-      padding:1rem 0;
+      gap:1.5rem;
+      padding:1.25rem 0;
     }
 
     .brand{
       font-weight:800;
       letter-spacing:-.03em;
+      font-size:1.05rem;
+      white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
+      align-items:center;
       flex-wrap:wrap;
-      gap:.9rem;
-      font-size:.95rem;
+      gap:1.4rem;
+      font-size:1rem;
       color:var(--muted);
     }
 
-    .nav-links a:hover{color:var(--red)}
+    .nav-links a{
+      transition:.2s ease;
+    }
 
-    /* PAGE D'ENTRÉE */
+    .nav-links a:hover{
+      color:var(--red);
+    }
+
+    .dropdown{
+      position:relative;
+    }
+
+    .dropdown-toggle{
+      display:inline-block;
+      cursor:pointer;
+    }
+
+    .dropdown-menu{
+      position:absolute;
+      top:calc(100% + 12px);
+      left:0;
+      min-width:280px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(0,0,0,.12);
+      padding:.6rem;
+      display:none;
+      flex-direction:column;
+      z-index:200;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:.75rem .9rem;
+      border-radius:14px;
+      color:var(--text);
+      font-size:.95rem;
+      line-height:1.35;
+    }
+
+    .dropdown-menu a:hover{
+      background:#f7e5e5;
+      color:var(--red);
+    }
+
+    .dropdown:hover .dropdown-menu{
+      display:flex;
+    }
+
     .intro{
       min-height:100vh;
       display:flex;
@@ -137,6 +188,8 @@
       border-radius:999px;
       font-weight:800;
       transition:.2s ease;
+      border:none;
+      cursor:pointer;
     }
 
     .btn:hover{
@@ -150,6 +203,12 @@
       font-weight:800;
       border:1px solid rgba(0,0,0,.1);
       background:#fff;
+      transition:.2s ease;
+    }
+
+    .btn-outline:hover{
+      transform:translateY(-2px);
+      color:var(--red);
     }
 
     .hero-card{
@@ -315,14 +374,20 @@
       .intro-grid,.grid-2,.project-feature,.contact{
         grid-template-columns:1fr;
       }
+
       .skills,.projects-grid,.project-stats{
         grid-template-columns:1fr 1fr;
       }
     }
 
     @media (max-width: 640px){
-      .nav-links{display:none}
-      .skills,.projects-grid,.project-stats{grid-template-columns:1fr}
+      .nav-links{
+        display:none;
+      }
+
+      .skills,.projects-grid,.project-stats{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -331,18 +396,33 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top">Mathélyo Favre-Réguillon</a>
+
       <div class="nav-links">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
+        <a href="#about">About me</a>
+        <a href="#racing">EPFL Racing Team</a>
+
+        <div class="dropdown">
+          <a href="#projects" class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="projects/monocoque.html">Monocoque insert analysis</a>
+            <a href="projects/screw-sorter.html">Screw sorter</a>
+            <a href="projects/raspberry-gripper.html">Raspberry gripper</a>
+            <a href="projects/domino-machine.html">Domino placement machine</a>
+            <a href="projects/sudoku-solver.html">Sudoku solver</a>
+            <a href="projects/fea-inserts.html">Finite element simulation</a>
+            <a href="projects/trampoline-measurement.html">Measurement on trampoline</a>
+            <a href="projects/xray-spectroscopy.html">X-ray spectroscopy</a>
+            <a href="projects/aluminium-alloys.html">High strength aluminium alloys</a>
+            <a href="projects/electrical-housing.html">Electrical housing integration</a>
+          </div>
+        </div>
+
         <a href="#skills">Skills</a>
-        <a href="#racing">EPFL Racing</a>
-        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- PAGE D'OUVERTURE -->
   <header class="intro" id="top">
     <div class="dot" style="width:120px;height:120px;left:-20px;top:60px;"></div>
     <div class="dot" style="width:100px;height:100px;right:8%;top:120px;"></div>
@@ -357,7 +437,7 @@
           focused on composites, lightweight structures, simulation, manufacturing and high-performance engineering.
         </p>
         <div class="intro-actions">
-          <a class="btn" href="#portfolio">Enter portfolio</a>
+          <button class="btn" onclick="scrollToSection('portfolio')">Enter portfolio</button>
           <a class="btn-outline" href="#contact">Contact me</a>
         </div>
       </div>
@@ -594,12 +674,24 @@
       </div>
     </section>
   </main>
+
   <script>
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, null, window.location.pathname);
+      }
+    }
+
     window.addEventListener("load", () => {
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+      }
       window.scrollTo(0, 0);
     });
   </script>
