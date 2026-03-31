@@ -708,6 +708,48 @@
         font-size:.92rem;
       }
 
+      .status-card{
+        display:flex;
+        flex-direction:column;
+        gap:.8rem;
+      }
+      
+      .status-label{
+        font-size:.85rem;
+        font-weight:800;
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        color:var(--muted);
+      }
+      
+      .status-heading{
+        font-size:1.4rem;
+        font-weight:800;
+        letter-spacing:-.02em;
+      }
+      
+      .status-text{
+        font-size:1rem;
+        color:#333;
+        max-width:70ch;
+      }
+      
+      .status-tags{
+        display:flex;
+        flex-wrap:wrap;
+        gap:.6rem;
+        margin-top:.3rem;
+      }
+      
+      .status-tag{
+        background:#f3ece9;
+        color:#3c3c3c;
+        padding:.5rem .9rem;
+        border-radius:999px;
+        font-weight:700;
+        font-size:.85rem;
+      }
+
     @media (max-width: 640px){
       .nav-links{
         display:none;
@@ -817,17 +859,24 @@
     <section class="section" id="status">
       <div class="container">
         <div class="card status-card">
-          <div class="status-badge" data-i18n="statusBadge">Currently available</div>
-          <h2 data-i18n="statusTitle">First-year Master’s student at EPFL</h2>
-          <p class="lead lead-full" data-i18n="statusText">
-            I am currently a first-year Master’s student in Mechanical Engineering at EPFL and I am looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing or high-performance systems.
+    
+          <p class="status-label" data-i18n="statusLabel">Current status</p>
+    
+          <h3 class="status-heading" data-i18n="statusHeading">
+            First-year Master’s student in Mechanical Engineering at EPFL
+          </h3>
+    
+          <p class="status-text" data-i18n="statusText">
+            Currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.
           </p>
     
           <div class="status-tags">
-            <span class="status-tag" data-i18n="statusTag1">6 to 12-month internship</span>
-            <span class="status-tag" data-i18n="statusTag2">Available for engineering opportunities</span>
-            <span class="status-tag" data-i18n="statusTag3">EPFL Master’s student</span>
+            <span class="status-tag" data-i18n="statusTag1">6–12 month internship</span>
+            <span class="status-tag" data-i18n="statusTag2">Engineering & design</span>
+            <span class="status-tag" data-i18n="statusTag3">Production optimization</span>
+            <span class="status-tag" data-i18n="statusTag4">Project management</span>
           </div>
+    
         </div>
       </div>
     </section>
@@ -1356,13 +1405,13 @@
         heroBtnProfile: "Discover my profile",
         heroBtnContact: "Contact me",
 
-        statusBadge: "Currently available",
-        statusTitle: "First-year Master’s student at EPFL",
-        statusText: "I am currently a first-year Master’s student in Mechanical Engineering at EPFL and I am looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing or high-performance systems.",
-        statusTag1: "6 to 12-month internship",
-        statusTag2: "Available for engineering opportunities",
-        statusTag3: "EPFL Master’s student",
-        aboutCvBtn: "Download my CV",
+        statusLabel: "Current status",
+        statusHeading: "First-year Master’s student in Mechanical Engineering at EPFL",
+        statusText: "Currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.",
+        statusTag1: "6–12 month internship",
+        statusTag2: "Engineering & design",
+        statusTag3: "Production optimization",
+        statusTag4: "Project management",
 
         aboutTitle: "About Me",
         aboutLead: "My academic journey has been defined by a continuous progression through demanding engineering projects that have shaped both my technical skills and my way of working. At EPFL, I have been involved in complex, team-based projects, strengthening my interest in design, manufacturing, and high-performance systems, while developing a structured and collaborative approach to engineering. This timeline traces my path from 2018 to today.",
@@ -1534,13 +1583,13 @@
         aboutMasterText: "Spécialisation en Design and Production avec un mineur en science des matériaux, orientée vers l’ingénierie de haute performance et l’exécution de projets techniques.",
 
 
-        statusBadge: "Actuellement disponible",
-        statusTitle: "Étudiant en première année de Master à l’EPFL",
-        statusText: "Je suis actuellement étudiant en première année de Master en génie mécanique à l’EPFL et je recherche un stage de 6 mois à 1 an en ingénierie, conception, simulation, fabrication ou systèmes de haute performance.",
-        statusTag1: "Stage de 6 mois à 1 an",
-        statusTag2: "Disponible pour des opportunités en ingénierie",
-        statusTag3: "Étudiant en Master à l’EPFL",
-        aboutCvBtn: "Télécharger mon CV",  
+        statusLabel: "Situation actuelle",
+        statusHeading: "Étudiant en première année de Master en génie mécanique à l’EPFL",
+        statusText: "Je recherche actuellement un stage de 6 à 12 mois en ingénierie, conception, simulation, fabrication, optimisation de chaîne de production ou gestion de projet technique.",
+        statusTag1: "Stage 6–12 mois",
+        statusTag2: "Ingénierie & conception",
+        statusTag3: "Optimisation de production",
+        statusTag4: "Gestion de projet",
 
         
         racingTitle: "EPFL Racing Team",
