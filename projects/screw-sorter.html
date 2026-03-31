@@ -280,117 +280,127 @@
       </div>
     </section>
   </main>
-    <script>
-    const translations = {
-      en: {
-        backToPortfolio: "← Back to portfolio",
-    
-        screwTag: "EPFL · ME-420 · Sustainable Design Project",
-        screwTitle: "ScrewSorter",
-        screwLead: "Development of a compact automated screw sorting system for small workshops, combining screw isolation, conveyor transport, camera-based measurement and bin distribution, with a strong focus on sustainability, low energy use and practical manufacturability.",
-    
-        screwOverviewTitle: "Project Overview",
-        screwOverviewText1: "ScrewSorter was designed as an automated sorting machine adapted to small and medium-sized workshops, where mixed screws are often discarded instead of reused.",
-        screwOverviewText2: "The final concept combines a lifting and separation subsystem, a custom conveyor with closed-loop positioning, a camera-based measurement system and rotating bins for automated sorting.",
-    
-        screwContribTitle: "Key Contributions",
-        screwContrib1: "Mechanical design of subsystems and final integrated prototype",
-        screwContrib2: "Design progression from concept selection to proof of concept",
-        screwContrib3: "Cost analysis and product positioning for batch production",
-        screwContrib4: "Sustainability-oriented engineering for reuse and low energy consumption",
-        screwContrib5: "Integration of sensing, control logic and manufacturable components",
-    
-        screwSystemTitle: "System Architecture",
-        screwSystemText1: "The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.",
-        screwSystemText2: "A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where a vision system estimates diameter and length before the screw is routed into the appropriate bin.",
-    
-        screwPerfTitle: "Performance",
-        screwPerf1: "12 screws/min sorting speed",
-        screwPerf2: "90% sorting accuracy",
-        screwPerf3: "57 W maximum instantaneous power",
-        screwPerf4: "600 × 900 × 280 mm final size",
-        screwPerf5: "M3–M6 and L10–L70 screw range",
-        screwPerf6: "70% material sorting accuracy",
-    
-        screwEngTitle: "Engineering Highlights",
-        screwEng1: "Custom TPU belt geometry for screw alignment and sensing",
-        screwEng2: "Closed-loop conveyor control using a distance sensor",
-        screwEng3: "Camera-based length and diameter estimation",
-        screwEng4: "Prototype optimized for compactness and workshop integration",
-        screwEng5: "Design trade-offs between throughput, robustness and complexity",
-    
-        screwCostTitle: "Cost & Sustainability",
-        screwCostText1: "The single prototype cost was estimated at 262.55 CHF, while the projected production cost for a batch of 100 units was 187.59 CHF per unit, leading to a target selling price of about 230 CHF.",
-        screwCostText2: "The project was framed around reuse, reduction and rethink principles, with the objective of reducing screw waste, manual sorting effort and associated environmental impact.",
-    
-        screwGalleryTitle: "Image Gallery",
-        screwFilesTitle: "Important Files",
-        screwFile1: "Project report (PDF)",
-        screwFile2: "Presentation slides (PDF)"
-      },
-    
-      fr: {
-        backToPortfolio: "← Retour au portfolio",
-    
-        screwTag: "EPFL · ME-420 · Projet de design durable",
-        screwTitle: "ScrewSorter",
-        screwLead: "Développement d’un système compact de tri automatisé de vis pour petits ateliers, combinant isolation des vis, transport par convoyeur, mesure par caméra et distribution dans des bacs, avec une forte attention portée à la durabilité, à la faible consommation d’énergie et à la fabricabilité.",
-    
-        screwOverviewTitle: "Vue d’ensemble du projet",
-        screwOverviewText1: "ScrewSorter a été conçu comme une machine de tri automatisée adaptée aux petits et moyens ateliers, où les vis mélangées sont souvent jetées au lieu d’être réutilisées.",
-        screwOverviewText2: "Le concept final combine un sous-système de levage et de séparation, un convoyeur sur mesure avec positionnement en boucle fermée, un système de mesure par caméra et des bacs rotatifs pour le tri automatique.",
-    
-        screwContribTitle: "Contributions clés",
-        screwContrib1: "Conception mécanique des sous-systèmes et du prototype final intégré",
-        screwContrib2: "Développement du concept depuis la sélection d’idées jusqu’à la preuve de concept",
-        screwContrib3: "Analyse des coûts et positionnement produit pour une production en série",
-        screwContrib4: "Approche d’ingénierie orientée durabilité, réutilisation et faible consommation",
-        screwContrib5: "Intégration des capteurs, de la logique de contrôle et de composants fabricables",
-    
-        screwSystemTitle: "Architecture du système",
-        screwSystemText1: "La machine s’organise autour de trois fonctions principales : l’isolation des vis, la mesure par caméra et le tri automatisé.",
-        screwSystemText2: "Un système de levage et une rampe unitaire alimentent individuellement un convoyeur TPU sur mesure, où un système de vision estime le diamètre et la longueur avant d’orienter chaque vis vers le bac approprié.",
-    
-        screwPerfTitle: "Performances",
-        screwPerf1: "Vitesse de tri de 12 vis/min",
-        screwPerf2: "Précision de tri de 90 %",
-        screwPerf3: "Puissance instantanée maximale de 57 W",
-        screwPerf4: "Dimensions finales de 600 × 900 × 280 mm",
-        screwPerf5: "Plage de vis M3–M6 et L10–L70",
-        screwPerf6: "Précision de tri matière de 70 %",
-    
-        screwEngTitle: "Points d’ingénierie clés",
-        screwEng1: "Géométrie de bande TPU sur mesure pour l’alignement et la détection",
-        screwEng2: "Contrôle en boucle fermée du convoyeur avec capteur de distance",
-        screwEng3: "Estimation de la longueur et du diamètre par caméra",
-        screwEng4: "Prototype optimisé pour la compacité et l’intégration en atelier",
-        screwEng5: "Compromis de conception entre débit, robustesse et complexité",
-    
-        screwCostTitle: "Coût et durabilité",
-        screwCostText1: "Le coût d’un prototype unique a été estimé à 262.55 CHF, tandis que le coût projeté pour une production de 100 unités est de 187.59 CHF par unité, conduisant à un prix de vente cible d’environ 230 CHF.",
-        screwCostText2: "Le projet a été structuré autour des principes reuse, reduce et rethink, avec l’objectif de limiter le gaspillage de vis, le temps de tri manuel et l’impact environnemental associé.",
-    
-        screwGalleryTitle: "Galerie d’images",
-        screwFilesTitle: "Fichiers importants",
-        screwFile1: "Rapport du projet (PDF)",
-        screwFile2: "Slides de présentation (PDF)"
-      }
-    };
-    
-    function applyTranslations(lang) {
-      const dict = translations[lang] || translations.en;
-    
-      document.documentElement.lang = lang;
-    
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key]) {
-          el.textContent = dict[key];
-        }
-      });
+
+  <script>
+  const translations = {
+    en: {
+      backToPortfolio: "← Back to portfolio",
+  
+      screwTag: "EPFL · ME-420 · Sustainable Design Project",
+      screwTitle: "ScrewSorter",
+      screwLead: "Development of a compact automated screw sorting system for small workshops, combining screw isolation, conveyor transport, camera-based measurement and bin distribution, with a strong focus on sustainability, low energy use and practical manufacturability.",
+  
+      screwOverviewTitle: "Project Overview",
+      screwOverviewText1: "ScrewSorter was designed as an automated sorting machine adapted to small and medium-sized workshops, where mixed screws are often discarded instead of reused.",
+      screwOverviewText2: "The final concept combines a lifting and separation subsystem, a custom conveyor with closed-loop positioning, a camera-based measurement system and rotating bins for automated sorting.",
+  
+      screwContribTitle: "Key Contributions",
+      screwContrib1: "Mechanical design of subsystems and final integrated prototype",
+      screwContrib2: "Design progression from concept selection to proof of concept",
+      screwContrib3: "Cost analysis and product positioning for batch production",
+      screwContrib4: "Sustainability-oriented engineering for reuse and low energy consumption",
+      screwContrib5: "Integration of sensing, control logic and manufacturable components",
+  
+      screwSystemTitle: "System Architecture",
+      screwSystemText1: "The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.",
+      screwSystemText2: "A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where a vision system estimates diameter and length before the screw is routed into the appropriate bin.",
+  
+      screwPerfTitle: "Performance",
+      screwPerf1: "12 screws/min sorting speed",
+      screwPerf2: "90% sorting accuracy",
+      screwPerf3: "57 W maximum instantaneous power",
+      screwPerf4: "600 × 900 × 280 mm final size",
+      screwPerf5: "M3–M6 and L10–L70 screw range",
+      screwPerf6: "70% material sorting accuracy",
+  
+      screwEngTitle: "Engineering Highlights",
+      screwEng1: "Custom TPU belt geometry for screw alignment and sensing",
+      screwEng2: "Closed-loop conveyor control using a distance sensor",
+      screwEng3: "Camera-based length and diameter estimation",
+      screwEng4: "Prototype optimized for compactness and workshop integration",
+      screwEng5: "Design trade-offs between throughput, robustness and complexity",
+  
+      screwCostTitle: "Cost & Sustainability",
+      screwCostText1: "The single prototype cost was estimated at 262.55 CHF, while the projected production cost for a batch of 100 units was 187.59 CHF per unit, leading to a target selling price of about 230 CHF.",
+      screwCostText2: "The project was framed around reuse, reduction and rethink principles, with the objective of reducing screw waste, manual sorting effort and associated environmental impact.",
+  
+      screwGalleryTitle: "Image Gallery",
+      screwFilesTitle: "Important Files",
+      screwFile1: "Project report (PDF)",
+      screwFile2: "Presentation slides (PDF)"
+    },
+  
+    fr: {
+      backToPortfolio: "← Retour au portfolio",
+  
+      screwTag: "EPFL · ME-420 · Projet de design durable",
+      screwTitle: "ScrewSorter",
+      screwLead: "Développement d’un système compact de tri automatisé de vis pour petits ateliers, combinant isolation des vis, transport par convoyeur, mesure par caméra et distribution dans des bacs, avec une forte attention portée à la durabilité, à la faible consommation d’énergie et à la fabricabilité.",
+  
+      screwOverviewTitle: "Vue d’ensemble du projet",
+      screwOverviewText1: "ScrewSorter a été conçu comme une machine de tri automatisée adaptée aux petits et moyens ateliers, où les vis mélangées sont souvent jetées au lieu d’être réutilisées.",
+      screwOverviewText2: "Le concept final combine un sous-système de levage et de séparation, un convoyeur sur mesure avec positionnement en boucle fermée, un système de mesure par caméra et des bacs rotatifs pour le tri automatique.",
+  
+      screwContribTitle: "Contributions clés",
+      screwContrib1: "Conception mécanique des sous-systèmes et du prototype final intégré",
+      screwContrib2: "Développement du concept depuis la sélection d’idées jusqu’à la preuve de concept",
+      screwContrib3: "Analyse des coûts et positionnement produit pour une production en série",
+      screwContrib4: "Approche d’ingénierie orientée durabilité, réutilisation et faible consommation",
+      screwContrib5: "Intégration des capteurs, de la logique de contrôle et de composants fabricables",
+  
+      screwSystemTitle: "Architecture du système",
+      screwSystemText1: "La machine s’organise autour de trois fonctions principales : l’isolation des vis, la mesure par caméra et le tri automatisé.",
+      screwSystemText2: "Un système de levage et une rampe unitaire alimentent individuellement un convoyeur TPU sur mesure, où un système de vision estime le diamètre et la longueur avant d’orienter chaque vis vers le bac approprié.",
+  
+      screwPerfTitle: "Performances",
+      screwPerf1: "Vitesse de tri de 12 vis/min",
+      screwPerf2: "Précision de tri de 90 %",
+      screwPerf3: "Puissance instantanée maximale de 57 W",
+      screwPerf4: "Dimensions finales de 600 × 900 × 280 mm",
+      screwPerf5: "Plage de vis M3–M6 et L10–L70",
+      screwPerf6: "Précision de tri matière de 70 %",
+  
+      screwEngTitle: "Points d’ingénierie clés",
+      screwEng1: "Géométrie de bande TPU sur mesure pour l’alignement et la détection",
+      screwEng2: "Contrôle en boucle fermée du convoyeur avec capteur de distance",
+      screwEng3: "Estimation de la longueur et du diamètre par caméra",
+      screwEng4: "Prototype optimisé pour la compacité et l’intégration en atelier",
+      screwEng5: "Compromis de conception entre débit, robustesse et complexité",
+  
+      screwCostTitle: "Coût et durabilité",
+      screwCostText1: "Le coût d’un prototype unique a été estimé à 262.55 CHF, tandis que le coût projeté pour une production de 100 unités est de 187.59 CHF par unité, conduisant à un prix de vente cible d’environ 230 CHF.",
+      screwCostText2: "Le projet a été structuré autour des principes reuse, reduce et rethink, avec l’objectif de limiter le gaspillage de vis, le temps de tri manuel et l’impact environnemental associé.",
+  
+      screwGalleryTitle: "Galerie d’images",
+      screwFilesTitle: "Fichiers importants",
+      screwFile1: "Rapport du projet (PDF)",
+      screwFile2: "Slides de présentation (PDF)"
     }
-    
-    applyTranslations("fr");
-    </script>
+  };
+  
+  function applyTranslations(lang) {
+    const dict = translations[lang] || translations.en;
+    document.documentElement.lang = lang;
+  
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (dict[key] !== undefined) {
+        el.textContent = dict[key];
+      }
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang =
+      localStorage.getItem("language") ||
+      localStorage.getItem("lang") ||
+      sessionStorage.getItem("language") ||
+      "en";
+  
+    console.log("Detected language:", savedLang);
+    applyTranslations(savedLang);
+  });
+  </script>
+  
   </body>
   </html>
