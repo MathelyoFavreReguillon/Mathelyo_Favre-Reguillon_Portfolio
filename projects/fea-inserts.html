@@ -59,20 +59,19 @@
       padding:3rem 0 2rem;
     }
 
-    h1,h2,h3{
+    h1,h2{
       line-height:1.05;
       letter-spacing:-.04em;
       margin:0 0 1rem;
     }
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
-    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
-    h3{font-size:1.2rem}
+    h2{font-size:clamp(1.7rem, 4vw, 2.4rem)}
 
     .lead{
-      font-size:1.1rem;
+      font-size:1.08rem;
       color:#333;
-      max-width:900px;
+      max-width:850px;
     }
 
     .tag{
@@ -84,6 +83,10 @@
       color:#9b0000;
       font-weight:700;
       margin-bottom:1rem;
+    }
+
+    .section{
+      padding:1.5rem 0;
     }
 
     .hero-image,
@@ -107,24 +110,54 @@
       background:#fff;
     }
 
-    .section{
-      padding:1.5rem 0;
+    .card{
+      padding:1.5rem;
     }
 
     .grid-2{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:1.15fr .85fr;
       gap:1.2rem;
     }
 
-    .grid-3{
+    .facts{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .fact{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .fact strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.2rem;
+    }
+
+    .muted{color:var(--muted)}
+
+    .results{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:1rem;
+      margin-top:1rem;
     }
 
-    .card{
-      padding:1.5rem;
+    .result{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .result strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.35rem;
     }
 
     .gallery{
@@ -142,7 +175,7 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
-      gap:.8rem;
+      gap:.75rem;
     }
 
     .gallery img{
@@ -155,19 +188,9 @@
       background:#fff;
     }
 
-    .metric{
-      padding:1rem 1.1rem;
-      border-radius:20px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-    }
-
-    .metric strong{
-      display:block;
-      font-size:1.4rem;
-      line-height:1.1;
-      margin-bottom:.35rem;
-      color:var(--text);
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
     }
 
     .files{
@@ -190,25 +213,9 @@
       border-color:rgba(214,0,0,.18);
     }
 
-    .muted{color:var(--muted)}
-
-    ul{
-      margin:.3rem 0 0 1.1rem;
-      padding:0;
-    }
-
-    li + li{
-      margin-top:.45rem;
-    }
-
-    .caption{
-      font-size:.95rem;
-      color:var(--muted);
-    }
-
     @media (max-width: 900px){
       .grid-2,
-      .grid-3,
+      .results,
       .gallery{
         grid-template-columns:1fr;
       }
@@ -240,7 +247,7 @@
         <div class="tag" data-i18n="projectTag">EPFL · Finite Element Analysis · EPFL Racing Team</div>
         <h1 data-i18n="projectTitle">FEA of Suspension Inserts</h1>
         <p class="lead" data-i18n="projectLead">
-          Finite element analysis of a double aluminium suspension insert integrated into a carbon monocoque, with the objective of validating stiffness, strength and safety under traction, shear and torsion load cases representative of Formula Student usage.
+          Finite element analysis of a double aluminium suspension insert developed for the EPFL Racing Team, with focus on stiffness, stress levels and safety under traction, shear and torsion load cases.
         </p>
       </div>
     </section>
@@ -254,210 +261,59 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="overviewTitle">Project Overview</h2>
+          <h2 data-i18n="overviewTitle">Overview</h2>
           <p data-i18n="overviewText1">
-            This project focused on the structural validation of a double suspension insert used as a fixation point between the wishbone assembly and the carbon monocoque of the EPFL Racing Team Formula Student car.
+            This project focused on the structural validation of a suspension insert integrated into the monocoque-side interface of a Formula Student car.
           </p>
           <p class="muted" data-i18n="overviewText2">
-            The work combined CAD-based geometry preparation, finite element modelling in 3DEXPERIENCE, mesh convergence studies, and comparison of the insert response under several critical mechanical load cases.
+            The work combined CAD preparation, FEA in 3DEXPERIENCE, mesh convergence studies and interpretation of critical load cases.
           </p>
         </div>
 
-        <div class="card">
-          <h2 data-i18n="contribTitle">Key Contributions</h2>
-          <ul>
-            <li data-i18n="contrib1">Definition of a realistic FEA methodology for a suspension insert</li>
-            <li data-i18n="contrib2">Integration of traction, shear and torsion load cases</li>
-            <li data-i18n="contrib3">Development of mesh refinement and convergence workflow</li>
-            <li data-i18n="contrib4">Assessment of stiffness, von Mises stress and factor of safety</li>
-            <li data-i18n="contrib5">Identification of critical zones and design improvement directions</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="contextTitle">Context</h2>
-          <p data-i18n="contextText1">
-            The insert is part of the monocoque-side suspension interface of the Formula Student car. It connects the external suspension attachment to the main composite structure and must transfer high localized loads with limited deformation.
-          </p>
-          <p class="muted" data-i18n="contextText2">
-            Because the insert works in a lightweight, high-performance environment, the design must remain compact and light while still ensuring reliable structural integrity in severe loading situations.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="geometryTitle">Geometry & Material</h2>
-          <ul>
-            <li data-i18n="geometry1">Double insert with two fixation holes for the suspension attachment</li>
-            <li data-i18n="geometry2">Overall dimensions: 94 mm × 54 mm × 21 mm</li>
-            <li data-i18n="geometry3">Two 13 mm holes for bolt passage</li>
-            <li data-i18n="geometry4">Mass around 29 g, volume around 10.35 cm³</li>
-            <li data-i18n="geometry5">Material: Aluminium 7075-T6</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-3">
-        <div class="metric">
-          <strong data-i18n="metric1Value">7075-T6</strong>
-          <span class="caption" data-i18n="metric1Label">Material used for the insert</span>
-        </div>
-        <div class="metric">
-          <strong data-i18n="metric2Value">71.7 GPa</strong>
-          <span class="caption" data-i18n="metric2Label">Young’s modulus</span>
-        </div>
-        <div class="metric">
-          <strong data-i18n="metric3Value">503 MPa</strong>
-          <span class="caption" data-i18n="metric3Label">Yield strength</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="methodTitle">Methodology</h2>
-          <p data-i18n="methodText1">
-            The analysis was carried out in 3DEXPERIENCE using a 3D solid model of the insert. A linear static approach was used to evaluate the local stress state, displacement field and global safety of the component.
-          </p>
-          <p class="muted" data-i18n="methodText2">
-            Symmetry conditions were exploited when possible to reduce computation time: a quarter model for axial traction, a half model for shear, and the complete part for torsion where no useful symmetry remained.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="loadingTitle">Load Cases</h2>
-          <ul>
-            <li data-i18n="loading1">Traction case based on severe suspension load transfer</li>
-            <li data-i18n="loading2">Shear case representing lateral loading on the insert</li>
-            <li data-i18n="loading3">Torsion case to evaluate resistance to twisting effects</li>
-            <li data-i18n="loading4">Conservative loading derived from suspension force studies</li>
-            <li data-i18n="loading5">40 N·m retained for the torsion study</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="meshTitle">Meshing Strategy</h2>
-          <p data-i18n="meshText1">
-            The model used quadratic tetrahedral elements, chosen to capture the complex geometry of the insert and the local stress gradients around holes, fillets and internal transitions.
-          </p>
-          <p class="muted" data-i18n="meshText2">
-            The retained mesh combined a 3 mm global size with a 1 mm local refinement in critical zones. For the most demanding convergence studies, local refinements were pushed down to 0.25 mm and 0.1 mm depending on the load case.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="meshDataTitle">Final Mesh Data</h2>
-          <ul>
-            <li data-i18n="meshData1">Global element size: 3 mm</li>
-            <li data-i18n="meshData2">Local refined size: 1 mm in critical areas</li>
-            <li data-i18n="meshData3">Total number of elements: 14,604</li>
-            <li data-i18n="meshData4">Total number of nodes: 27,226</li>
-            <li data-i18n="meshData5">Degrees of freedom: 81,678</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="convergenceTitle">Convergence Study</h2>
-          <p data-i18n="convergenceText1">
-            A dedicated convergence study was performed by progressively refining both global and local mesh sizes and comparing three key outputs: maximum displacement, maximum von Mises stress and minimum factor of safety.
-          </p>
-          <p class="muted" data-i18n="convergenceText2">
-            This ensured that the selected mesh provided a stable and reliable basis for comparison between load cases, while keeping the numerical cost at a reasonable level for iterative design work.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="solverTitle">Solver Setup</h2>
-          <ul>
-            <li data-i18n="solver1">Linear static finite element analysis</li>
-            <li data-i18n="solver2">General static step in 3DEXPERIENCE</li>
-            <li data-i18n="solver3">Automatic incrementation enabled</li>
-            <li data-i18n="solver4">Instantaneous elastic response assumption</li>
-            <li data-i18n="solver5">Geometric nonlinearity activated when relevant</li>
-          </ul>
+        <div class="facts">
+          <div class="fact">
+            <strong data-i18n="fact1Title">Material</strong>
+            <span class="muted" data-i18n="fact1Text">Aluminium 7075-T6</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact2Title">Geometry</strong>
+            <span class="muted" data-i18n="fact2Text">94 × 54 × 21 mm double insert</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact3Title">Method</strong>
+            <span class="muted" data-i18n="fact3Text">3D solid FEA with refined tetrahedral mesh</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact4Title">Load cases</strong>
+            <span class="muted" data-i18n="fact4Text">Traction, shear and torsion</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2 data-i18n="resultsTitle">Main Results</h2>
-        <div class="grid-3">
-          <div class="metric">
-            <strong data-i18n="result1Value">Traction</strong>
-            <span class="caption" data-i18n="result1Label">u<sub>max</sub> ≈ 0.283 mm, σ<sub>max</sub> ≈ 546 MPa, FoS ≈ 0.926</span>
+        <h2 data-i18n="approachTitle">Approach & Results</h2>
+        <p data-i18n="approachText1">
+          The insert was analysed with a linear static finite element model. Symmetry was used when possible to reduce the computational cost, while local mesh refinement was applied around holes, fillets and internal transitions to capture the most critical stress concentrations.
+        </p>
+        <p class="muted" data-i18n="approachText2">
+          The study showed a globally stiff design, with torsion identified as the most critical loading case for the current geometry.
+        </p>
+
+        <div class="results">
+          <div class="result">
+            <strong data-i18n="result1Title">Traction</strong>
+            <span class="muted" data-i18n="result1Text">u<sub>max</sub> ≈ 0.283 mm · σ<sub>max</sub> ≈ 546 MPa · FoS ≈ 0.926</span>
           </div>
-          <div class="metric">
-            <strong data-i18n="result2Value">Shear</strong>
-            <span class="caption" data-i18n="result2Label">σ<sub>max</sub> around 420 MPa, stabilized displacement, FoS ≈ 1.20</span>
+          <div class="result">
+            <strong data-i18n="result2Title">Shear</strong>
+            <span class="muted" data-i18n="result2Text">Stable displacement response · FoS ≈ 1.20 after refinement</span>
           </div>
-          <div class="metric">
-            <strong data-i18n="result3Value">Torsion</strong>
-            <span class="caption" data-i18n="result3Label">σ<sub>max</sub> ≈ 535 MPa, FoS ≈ 0.944, critical local overstress</span>
+          <div class="result">
+            <strong data-i18n="result3Title">Torsion</strong>
+            <span class="muted" data-i18n="result3Text">Most critical case · σ<sub>max</sub> ≈ 535 MPa · FoS ≈ 0.944</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="tractionTitle">Traction Case</h2>
-          <p data-i18n="tractionText1">
-            In traction, the insert shows low global displacement and satisfactory rigidity. The most loaded areas are localized around the bolt passage and reinforced regions.
-          </p>
-          <p class="muted" data-i18n="tractionText2">
-            The maximum stress approaches the yield strength of 7075-T6 under the most severe loading assumptions, which makes this case close to the design limit.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="shearTitle">Shear Case</h2>
-          <p data-i18n="shearText1">
-            In shear, the convergence study showed a stable displacement response and an acceptable minimum safety factor around 1.20 after mesh refinement.
-          </p>
-          <p class="muted" data-i18n="shearText2">
-            A local stress concentration originally appeared near the junction between reinforcing bars and side walls, which led to the addition of fillets to reduce stress peaks.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="torsionTitle">Torsion Case</h2>
-          <p data-i18n="torsionText1">
-            Torsion was the most critical case. The complete part had to be modelled, and strong local stress concentrations appeared in the internal transitions and around mechanical interfaces.
-          </p>
-          <p class="muted" data-i18n="torsionText2">
-            The minimum factor of safety dropped below 1, indicating that this loading scenario is a strong candidate for future local redesign or reinforcement work.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="takeawaysTitle">Engineering Takeaways</h2>
-          <ul>
-            <li data-i18n="takeaway1">The insert is globally stiff and well optimized for most load cases</li>
-            <li data-i18n="takeaway2">Critical local zones are strongly linked to holes, fillets and internal transitions</li>
-            <li data-i18n="takeaway3">Mesh refinement is essential to obtain reliable local stress values</li>
-            <li data-i18n="takeaway4">Torsion remains the most demanding case for the current design</li>
-            <li data-i18n="takeaway5">The study provides a solid basis for future validation and redesign iterations</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -468,19 +324,19 @@
         <div class="gallery">
           <div class="gallery-item">
             <img src="../photos/FEM1.png" alt="Insert geometry">
-            <div class="caption" data-i18n="galleryCaption1">Insert geometry and general design</div>
+            <div class="caption" data-i18n="galleryCaption1">Insert geometry and design</div>
           </div>
           <div class="gallery-item">
             <img src="../photos/FEM2.png" alt="Mesh view">
-            <div class="caption" data-i18n="galleryCaption2">Quadratic tetrahedral mesh with local refinement</div>
+            <div class="caption" data-i18n="galleryCaption2">Refined finite element mesh</div>
           </div>
           <div class="gallery-item">
             <img src="../photos/FEM3.PNG" alt="Traction results">
-            <div class="caption" data-i18n="galleryCaption3">Traction case – displacement / stress results</div>
+            <div class="caption" data-i18n="galleryCaption3">Traction case results</div>
           </div>
           <div class="gallery-item">
             <img src="../photos/FEM4.png" alt="Shear results">
-            <div class="caption" data-i18n="galleryCaption4">Shear case – refined critical area</div>
+            <div class="caption" data-i18n="galleryCaption4">Shear case and critical zone</div>
           </div>
         </div>
       </div>
@@ -504,104 +360,37 @@
 
         projectTag: "EPFL · Finite Element Analysis · EPFL Racing Team",
         projectTitle: "FEA of Suspension Inserts",
-        projectLead: "Finite element analysis of a double aluminium suspension insert integrated into a carbon monocoque, with the objective of validating stiffness, strength and safety under traction, shear and torsion load cases representative of Formula Student usage.",
+        projectLead: "Finite element analysis of a double aluminium suspension insert developed for the EPFL Racing Team, with focus on stiffness, stress levels and safety under traction, shear and torsion load cases.",
 
-        overviewTitle: "Project Overview",
-        overviewText1: "This project focused on the structural validation of a double suspension insert used as a fixation point between the wishbone assembly and the carbon monocoque of the EPFL Racing Team Formula Student car.",
-        overviewText2: "The work combined CAD-based geometry preparation, finite element modelling in 3DEXPERIENCE, mesh convergence studies, and comparison of the insert response under several critical mechanical load cases.",
+        overviewTitle: "Overview",
+        overviewText1: "This project focused on the structural validation of a suspension insert integrated into the monocoque-side interface of a Formula Student car.",
+        overviewText2: "The work combined CAD preparation, FEA in 3DEXPERIENCE, mesh convergence studies and interpretation of critical load cases.",
 
-        contribTitle: "Key Contributions",
-        contrib1: "Definition of a realistic FEA methodology for a suspension insert",
-        contrib2: "Integration of traction, shear and torsion load cases",
-        contrib3: "Development of mesh refinement and convergence workflow",
-        contrib4: "Assessment of stiffness, von Mises stress and factor of safety",
-        contrib5: "Identification of critical zones and design improvement directions",
+        fact1Title: "Material",
+        fact1Text: "Aluminium 7075-T6",
+        fact2Title: "Geometry",
+        fact2Text: "94 × 54 × 21 mm double insert",
+        fact3Title: "Method",
+        fact3Text: "3D solid FEA with refined tetrahedral mesh",
+        fact4Title: "Load cases",
+        fact4Text: "Traction, shear and torsion",
 
-        contextTitle: "Context",
-        contextText1: "The insert is part of the monocoque-side suspension interface of the Formula Student car. It connects the external suspension attachment to the main composite structure and must transfer high localized loads with limited deformation.",
-        contextText2: "Because the insert works in a lightweight, high-performance environment, the design must remain compact and light while still ensuring reliable structural integrity in severe loading situations.",
+        approachTitle: "Approach & Results",
+        approachText1: "The insert was analysed with a linear static finite element model. Symmetry was used when possible to reduce the computational cost, while local mesh refinement was applied around holes, fillets and internal transitions to capture the most critical stress concentrations.",
+        approachText2: "The study showed a globally stiff design, with torsion identified as the most critical loading case for the current geometry.",
 
-        geometryTitle: "Geometry & Material",
-        geometry1: "Double insert with two fixation holes for the suspension attachment",
-        geometry2: "Overall dimensions: 94 mm × 54 mm × 21 mm",
-        geometry3: "Two 13 mm holes for bolt passage",
-        geometry4: "Mass around 29 g, volume around 10.35 cm³",
-        geometry5: "Material: Aluminium 7075-T6",
-
-        metric1Value: "7075-T6",
-        metric1Label: "Material used for the insert",
-        metric2Value: "71.7 GPa",
-        metric2Label: "Young’s modulus",
-        metric3Value: "503 MPa",
-        metric3Label: "Yield strength",
-
-        methodTitle: "Methodology",
-        methodText1: "The analysis was carried out in 3DEXPERIENCE using a 3D solid model of the insert. A linear static approach was used to evaluate the local stress state, displacement field and global safety of the component.",
-        methodText2: "Symmetry conditions were exploited when possible to reduce computation time: a quarter model for axial traction, a half model for shear, and the complete part for torsion where no useful symmetry remained.",
-
-        loadingTitle: "Load Cases",
-        loading1: "Traction case based on severe suspension load transfer",
-        loading2: "Shear case representing lateral loading on the insert",
-        loading3: "Torsion case to evaluate resistance to twisting effects",
-        loading4: "Conservative loading derived from suspension force studies",
-        loading5: "40 N·m retained for the torsion study",
-
-        meshTitle: "Meshing Strategy",
-        meshText1: "The model used quadratic tetrahedral elements, chosen to capture the complex geometry of the insert and the local stress gradients around holes, fillets and internal transitions.",
-        meshText2: "The retained mesh combined a 3 mm global size with a 1 mm local refinement in critical zones. For the most demanding convergence studies, local refinements were pushed down to 0.25 mm and 0.1 mm depending on the load case.",
-
-        meshDataTitle: "Final Mesh Data",
-        meshData1: "Global element size: 3 mm",
-        meshData2: "Local refined size: 1 mm in critical areas",
-        meshData3: "Total number of elements: 14,604",
-        meshData4: "Total number of nodes: 27,226",
-        meshData5: "Degrees of freedom: 81,678",
-
-        convergenceTitle: "Convergence Study",
-        convergenceText1: "A dedicated convergence study was performed by progressively refining both global and local mesh sizes and comparing three key outputs: maximum displacement, maximum von Mises stress and minimum factor of safety.",
-        convergenceText2: "This ensured that the selected mesh provided a stable and reliable basis for comparison between load cases, while keeping the numerical cost at a reasonable level for iterative design work.",
-
-        solverTitle: "Solver Setup",
-        solver1: "Linear static finite element analysis",
-        solver2: "General static step in 3DEXPERIENCE",
-        solver3: "Automatic incrementation enabled",
-        solver4: "Instantaneous elastic response assumption",
-        solver5: "Geometric nonlinearity activated when relevant",
-
-        resultsTitle: "Main Results",
-        result1Value: "Traction",
-        result1Label: "u<sub>max</sub> ≈ 0.283 mm, σ<sub>max</sub> ≈ 546 MPa, FoS ≈ 0.926",
-        result2Value: "Shear",
-        result2Label: "σ<sub>max</sub> around 420 MPa, stabilized displacement, FoS ≈ 1.20",
-        result3Value: "Torsion",
-        result3Label: "σ<sub>max</sub> ≈ 535 MPa, FoS ≈ 0.944, critical local overstress",
-
-        tractionTitle: "Traction Case",
-        tractionText1: "In traction, the insert shows low global displacement and satisfactory rigidity. The most loaded areas are localized around the bolt passage and reinforced regions.",
-        tractionText2: "The maximum stress approaches the yield strength of 7075-T6 under the most severe loading assumptions, which makes this case close to the design limit.",
-
-        shearTitle: "Shear Case",
-        shearText1: "In shear, the convergence study showed a stable displacement response and an acceptable minimum safety factor around 1.20 after mesh refinement.",
-        shearText2: "A local stress concentration originally appeared near the junction between reinforcing bars and side walls, which led to the addition of fillets to reduce stress peaks.",
-
-        torsionTitle: "Torsion Case",
-        torsionText1: "Torsion was the most critical case. The complete part had to be modelled, and strong local stress concentrations appeared in the internal transitions and around mechanical interfaces.",
-        torsionText2: "The minimum factor of safety dropped below 1, indicating that this loading scenario is a strong candidate for future local redesign or reinforcement work.",
-
-        takeawaysTitle: "Engineering Takeaways",
-        takeaway1: "The insert is globally stiff and well optimized for most load cases",
-        takeaway2: "Critical local zones are strongly linked to holes, fillets and internal transitions",
-        takeaway3: "Mesh refinement is essential to obtain reliable local stress values",
-        takeaway4: "Torsion remains the most demanding case for the current design",
-        takeaway5: "The study provides a solid basis for future validation and redesign iterations",
+        result1Title: "Traction",
+        result1Text: "u<sub>max</sub> ≈ 0.283 mm · σ<sub>max</sub> ≈ 546 MPa · FoS ≈ 0.926",
+        result2Title: "Shear",
+        result2Text: "Stable displacement response · FoS ≈ 1.20 after refinement",
+        result3Title: "Torsion",
+        result3Text: "Most critical case · σ<sub>max</sub> ≈ 535 MPa · FoS ≈ 0.944",
 
         galleryTitle: "Image Gallery",
-        galleryCaption1: "Insert geometry and general design",
-        galleryCaption2: "Quadratic tetrahedral mesh with local refinement",
-        galleryCaption3: "Traction case – displacement / stress results",
-        galleryCaption4: "Shear case – refined critical area",
-        galleryCaption5: "Torsion case – full part analysis",
-        galleryCaption6: "Convergence workflow and result interpretation",
+        galleryCaption1: "Insert geometry and design",
+        galleryCaption2: "Refined finite element mesh",
+        galleryCaption3: "Traction case results",
+        galleryCaption4: "Shear case and critical zone",
 
         filesTitle: "Important Files",
         file1: "Finite element analysis report (PDF)",
@@ -613,104 +402,37 @@
 
         projectTag: "EPFL · Analyse par éléments finis · EPFL Racing Team",
         projectTitle: "Analyse FEM d’inserts de suspension",
-        projectLead: "Analyse par éléments finis d’un insert de suspension double en aluminium intégré dans une monocoque carbone, avec pour objectif de valider la rigidité, la résistance et la sécurité sous des cas de charge en traction, cisaillement et torsion représentatifs de la Formula Student.",
+        projectLead: "Analyse par éléments finis d’un insert double en aluminium développé pour l’EPFL Racing Team, avec un focus sur la rigidité, les niveaux de contrainte et la sécurité sous des cas de charge en traction, cisaillement et torsion.",
 
-        overviewTitle: "Vue d’ensemble du projet",
-        overviewText1: "Ce projet portait sur la validation structurelle d’un insert double de suspension utilisé comme point de fixation entre l’attache de suspension et la monocoque carbone de la voiture de Formula Student de l’EPFL Racing Team.",
-        overviewText2: "Le travail a combiné préparation géométrique en CAO, modélisation par éléments finis sous 3DEXPERIENCE, études de convergence de maillage et comparaison du comportement de l’insert sous plusieurs cas de charge critiques.",
+        overviewTitle: "Vue d’ensemble",
+        overviewText1: "Ce projet portait sur la validation structurelle d’un insert de suspension intégré à l’interface côté monocoque d’une voiture de Formula Student.",
+        overviewText2: "Le travail a combiné préparation CAO, analyse FEM sous 3DEXPERIENCE, convergence de maillage et interprétation des cas de charge critiques.",
 
-        contribTitle: "Contributions clés",
-        contrib1: "Définition d’une méthodologie FEM réaliste pour un insert de suspension",
-        contrib2: "Intégration des cas de charge en traction, cisaillement et torsion",
-        contrib3: "Développement d’un workflow de raffinement et convergence de maillage",
-        contrib4: "Évaluation de la rigidité, des contraintes de von Mises et du facteur de sécurité",
-        contrib5: "Identification des zones critiques et des pistes d’amélioration du design",
+        fact1Title: "Matériau",
+        fact1Text: "Aluminium 7075-T6",
+        fact2Title: "Géométrie",
+        fact2Text: "Insert double de 94 × 54 × 21 mm",
+        fact3Title: "Méthode",
+        fact3Text: "FEM solide 3D avec maillage tétraédrique raffiné",
+        fact4Title: "Cas de charge",
+        fact4Text: "Traction, cisaillement et torsion",
 
-        contextTitle: "Contexte",
-        contextText1: "L’insert fait partie de l’interface suspension côté monocoque de la voiture de Formula Student. Il relie l’attache de suspension externe à la structure composite principale et doit transférer des charges localisées importantes avec peu de déformation.",
-        contextText2: "Comme l’insert travaille dans un environnement léger et haute performance, le design doit rester compact et léger tout en garantissant une intégrité structurelle fiable dans des situations de chargement sévères.",
+        approachTitle: "Approche et résultats",
+        approachText1: "L’insert a été analysé à l’aide d’un modèle statique linéaire par éléments finis. Les symétries ont été exploitées lorsque possible pour réduire le coût de calcul, tandis qu’un raffinement local du maillage a été appliqué autour des trous, congés et transitions internes afin de bien capturer les concentrations de contraintes critiques.",
+        approachText2: "L’étude a mis en évidence un design globalement rigide, avec la torsion identifiée comme le cas de charge le plus critique pour la géométrie actuelle.",
 
-        geometryTitle: "Géométrie et matériau",
-        geometry1: "Insert double avec deux trous de fixation pour l’attache de suspension",
-        geometry2: "Dimensions globales : 94 mm × 54 mm × 21 mm",
-        geometry3: "Deux trous de 13 mm pour le passage des vis",
-        geometry4: "Masse d’environ 29 g, volume d’environ 10,35 cm³",
-        geometry5: "Matériau : Aluminium 7075-T6",
-
-        metric1Value: "7075-T6",
-        metric1Label: "Matériau utilisé pour l’insert",
-        metric2Value: "71,7 GPa",
-        metric2Label: "Module d’Young",
-        metric3Value: "503 MPa",
-        metric3Label: "Limite d’élasticité",
-
-        methodTitle: "Méthodologie",
-        methodText1: "L’analyse a été réalisée sous 3DEXPERIENCE à partir d’un modèle solide 3D de l’insert. Une approche statique linéaire a été utilisée afin d’évaluer l’état de contrainte local, le champ de déplacement et la sécurité globale du composant.",
-        methodText2: "Des conditions de symétrie ont été exploitées lorsque cela était possible pour réduire le coût de calcul : quart de pièce en traction axiale, demi-pièce en cisaillement, et pièce complète en torsion lorsqu’aucune symétrie utile ne subsistait.",
-
-        loadingTitle: "Cas de charge",
-        loading1: "Cas de traction basé sur un transfert d’effort sévère de suspension",
-        loading2: "Cas de cisaillement représentant un chargement latéral sur l’insert",
-        loading3: "Cas de torsion pour évaluer la résistance aux effets de rotation",
-        loading4: "Chargements conservatifs issus d’études d’efforts de suspension",
-        loading5: "40 N·m retenus pour l’étude en torsion",
-
-        meshTitle: "Stratégie de maillage",
-        meshText1: "Le modèle utilise des éléments tétraédriques quadratiques, choisis pour bien capturer la géométrie complexe de l’insert et les gradients locaux de contrainte autour des trous, congés et transitions internes.",
-        meshText2: "Le maillage retenu combine une taille globale de 3 mm avec un raffinement local à 1 mm dans les zones critiques. Pour les études de convergence les plus poussées, les raffinements locaux ont été descendus jusqu’à 0,25 mm et 0,1 mm selon le cas de charge.",
-
-        meshDataTitle: "Données du maillage final",
-        meshData1: "Taille globale des éléments : 3 mm",
-        meshData2: "Taille locale raffinée : 1 mm dans les zones critiques",
-        meshData3: "Nombre total d’éléments : 14 604",
-        meshData4: "Nombre total de nœuds : 27 226",
-        meshData5: "Degrés de liberté : 81 678",
-
-        convergenceTitle: "Étude de convergence",
-        convergenceText1: "Une étude de convergence dédiée a été menée en raffinant progressivement les tailles de maillage globales et locales, puis en comparant trois sorties clés : déplacement maximal, contrainte maximale de von Mises et facteur de sécurité minimal.",
-        convergenceText2: "Cela a permis de garantir que le maillage sélectionné constitue une base stable et fiable pour comparer les cas de charge, tout en conservant un coût numérique raisonnable pour un travail itératif de conception.",
-
-        solverTitle: "Paramètres de résolution",
-        solver1: "Analyse statique linéaire par éléments finis",
-        solver2: "Pas statique général dans 3DEXPERIENCE",
-        solver3: "Incrémentation automatique activée",
-        solver4: "Hypothèse de réponse élastique instantanée",
-        solver5: "Non-linéarité géométrique activée lorsque pertinent",
-
-        resultsTitle: "Résultats principaux",
-        result1Value: "Traction",
-        result1Label: "u<sub>max</sub> ≈ 0,283 mm, σ<sub>max</sub> ≈ 546 MPa, FoS ≈ 0,926",
-        result2Value: "Cisaillement",
-        result2Label: "σ<sub>max</sub> autour de 420 MPa, déplacement stabilisé, FoS ≈ 1,20",
-        result3Value: "Torsion",
-        result3Label: "σ<sub>max</sub> ≈ 535 MPa, FoS ≈ 0,944, surcontrainte locale critique",
-
-        tractionTitle: "Cas en traction",
-        tractionText1: "En traction, l’insert présente un faible déplacement global et une rigidité satisfaisante. Les zones les plus sollicitées se situent autour du passage de vis et des régions renforcées.",
-        tractionText2: "La contrainte maximale s’approche de la limite d’élasticité du 7075-T6 sous les hypothèses de chargement les plus sévères, ce qui place ce cas proche de la limite de dimensionnement.",
-
-        shearTitle: "Cas en cisaillement",
-        shearText1: "En cisaillement, l’étude de convergence montre une réponse en déplacement stable et un facteur de sécurité minimal acceptable autour de 1,20 après raffinement du maillage.",
-        shearText2: "Une concentration locale de contrainte apparaissait initialement près de la jonction entre les barres de renfort et les parois latérales, ce qui a conduit à l’ajout de congés pour réduire les pics de contrainte.",
-
-        torsionTitle: "Cas en torsion",
-        torsionText1: "La torsion est le cas le plus critique. La pièce complète a dû être modélisée, et de fortes concentrations locales de contrainte sont apparues dans les transitions internes et autour des interfaces mécaniques.",
-        torsionText2: "Le facteur de sécurité minimal passe sous 1, ce qui indique que ce scénario de chargement constitue un candidat important pour un futur redesign local ou un renforcement ciblé.",
-
-        takeawaysTitle: "Enseignements d’ingénierie",
-        takeaway1: "L’insert est globalement rigide et bien optimisé pour la plupart des cas de charge",
-        takeaway2: "Les zones critiques locales sont fortement liées aux trous, congés et transitions internes",
-        takeaway3: "Le raffinement du maillage est indispensable pour obtenir des contraintes locales fiables",
-        takeaway4: "La torsion reste le cas le plus exigeant pour le design actuel",
-        takeaway5: "L’étude fournit une base solide pour les futures validations et itérations de redesign",
+        result1Title: "Traction",
+        result1Text: "u<sub>max</sub> ≈ 0,283 mm · σ<sub>max</sub> ≈ 546 MPa · FoS ≈ 0,926",
+        result2Title: "Cisaillement",
+        result2Text: "Réponse en déplacement stable · FoS ≈ 1,20 après raffinement",
+        result3Title: "Torsion",
+        result3Text: "Cas le plus critique · σ<sub>max</sub> ≈ 535 MPa · FoS ≈ 0,944",
 
         galleryTitle: "Galerie d’images",
-        galleryCaption1: "Géométrie de l’insert et design général",
-        galleryCaption2: "Maillage tétraédrique quadratique avec raffinement local",
-        galleryCaption3: "Cas de traction – résultats déplacement / contraintes",
-        galleryCaption4: "Cas de cisaillement – zone critique raffinée",
-        galleryCaption5: "Cas de torsion – analyse sur pièce complète",
-        galleryCaption6: "Workflow de convergence et interprétation des résultats",
+        galleryCaption1: "Géométrie et design de l’insert",
+        galleryCaption2: "Maillage éléments finis raffiné",
+        galleryCaption3: "Résultats du cas en traction",
+        galleryCaption4: "Cas en cisaillement et zone critique",
 
         filesTitle: "Fichiers importants",
         file1: "Rapport d’analyse par éléments finis (PDF)",
