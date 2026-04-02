@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EPFL Racing Team – Second Year | Mathélyo Favre-Réguillon</title>
-
   <style>
     :root{
       --bg:#f4f1ef;
@@ -24,7 +23,7 @@
 
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
@@ -41,6 +40,7 @@
     .nav{
       position:sticky;
       top:0;
+      z-index:30;
       backdrop-filter:blur(16px);
       background:rgba(244,241,239,.82);
       border-bottom:1px solid rgba(0,0,0,.06);
@@ -51,6 +51,7 @@
       justify-content:space-between;
       align-items:center;
       padding:1rem 0;
+      gap:1rem;
     }
 
     .back{
@@ -62,7 +63,7 @@
       padding:3rem 0 1.5rem;
     }
 
-    h1,h2{
+    h1,h2,h3{
       line-height:1.05;
       letter-spacing:-.04em;
       margin:0 0 1rem;
@@ -70,11 +71,12 @@
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
     h2{font-size:clamp(1.6rem, 4vw, 2.5rem)}
+    h3{font-size:1.15rem}
 
     .lead{
       font-size:1.08rem;
       color:#333;
-      max-width:900px;
+      max-width:920px;
     }
 
     .tag{
@@ -88,6 +90,10 @@
       margin-bottom:1rem;
     }
 
+    .tabs-wrap{
+      padding:.5rem 0 1rem;
+    }
+
     .tabs{
       display:flex;
       gap:.8rem;
@@ -95,28 +101,66 @@
     }
 
     .tab-btn{
+      border:none;
       background:#fff;
+      color:var(--text);
       border-radius:999px;
       padding:.9rem 1.1rem;
+      font:inherit;
       font-weight:700;
       cursor:pointer;
-      border:1px solid rgba(0,0,0,.06);
       box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
+      transition:.2s ease;
+    }
+
+    .tab-btn:hover{
+      transform:translateY(-1px);
     }
 
     .tab-btn.active{
       background:var(--red);
       color:#fff;
+      border-color:var(--red);
     }
 
-    .role-panel{display:none}
-    .role-panel.active{display:block}
-
+    .hero-image,
     .card{
-      background:#fff;
+      background:var(--card);
       border-radius:var(--radius);
-      padding:1.5rem;
       box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-image{
+      padding:1rem;
+    }
+
+    .hero-image-frame{
+      height:520px;
+      border-radius:22px;
+      background:#fff;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .hero-image-frame img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      transform:
+        translate(var(--img-x, 0px), var(--img-y, 0px))
+        scale(var(--img-scale, 1));
+      transform-origin:center center;
+      will-change:transform;
+    }
+
+    .section{
+      padding:1.4rem 0;
     }
 
     .grid-2{
@@ -125,19 +169,46 @@
       gap:1.2rem;
     }
 
+    .card{
+      padding:1.5rem;
+    }
+
+    .muted{color:var(--muted)}
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
     .gallery{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(3, 1fr);
       gap:1rem;
     }
 
     .gallery-item{
       background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
       padding:.8rem;
+      min-height:260px;
       display:flex;
-      justify-content:center;
       align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
+      width:100%;
+      height:100%;
+      max-height:240px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
     }
 
     .files{
@@ -147,146 +218,468 @@
     }
 
     .file-link{
-      padding:1rem;
+      display:block;
+      padding:1rem 1.1rem;
       border-radius:18px;
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
+    }
+
+    .role-panel{
+      display:none;
+    }
+
+    .role-panel.active{
       display:block;
     }
 
-    @media(max-width:800px){
-      .grid-2{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
+    @media (max-width: 950px){
+      .gallery{grid-template-columns:repeat(2, 1fr)}
       .files{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 800px){
+      .grid-2{grid-template-columns:1fr}
+      .hero-image-frame{height:320px}
+    }
+
+    @media (max-width: 560px){
+      .gallery{grid-template-columns:1fr}
+      .gallery-item{min-height:240px}
+      .gallery img{max-height:220px}
     }
   </style>
 </head>
-
 <body>
-
-<nav class="nav">
-  <div class="container nav-inner">
-    <a class="back" href="../index.html#projects">← Back to portfolio</a>
-  </div>
-</nav>
-
-<main>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="tag">EPFL · EPFL Racing Team · Second Year</div>
-
-    <!-- DEFAULT = MONO -->
-    <h1 id="roleTitleMain">Monocoque & Layup Division Lead</h1>
-
-    <p class="lead" id="roleLeadMain">
-      In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car.
-    </p>
-  </div>
-</section>
-
-<!-- TABS -->
-<section class="container">
-  <div class="tabs">
-
-    <!-- MONO FIRST -->
-    <button class="tab-btn active" data-role="mono">
-      Monocoque & Layup Division Lead
-    </button>
-
-    <button class="tab-btn" data-role="vp">
-      Vice-President
-    </button>
-
-  </div>
-</section>
-
-<!-- ================= MONO FIRST ================= -->
-<section id="panel-mono" class="role-panel active">
-
-  <section class="container grid-2">
-    <div class="card">
-      <h2>Role Overview</h2>
-      <p>
-        Responsible for the manufacturing and delivery of the carbon monocoque,
-        leading composite production and team execution on one of the most critical parts of the car.
-      </p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
+  </nav>
 
-    <div class="card">
-      <h2>Main Responsibilities</h2>
-      <ul>
-        <li>Leading monocoque production</li>
-        <li>Supervising composite manufacturing</li>
-        <li>Managing team and workflow</li>
-        <li>Ensuring quality & timing</li>
-      </ul>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tag" data-i18n="pageTag">EPFL · EPFL Racing Team · Second Year</div>
+        <h1 id="roleTitleMain">Monocoque & Layup Division Lead</h1>
+        <p class="lead" id="roleLeadMain">
+          In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position involved composites production leadership, division coordination and delivery responsibility on a core structural component of the vehicle.
+        </p>
+      </div>
+    </section>
 
-</section>
+    <section class="tabs-wrap">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-role="mono" data-i18n="tabMono">Monocoque & Layup Division Lead</button>
+          <button class="tab-btn" data-role="vp" data-i18n="tabVp">Vice-President</button>
+        </div>
+      </div>
+    </section>
 
-<!-- ================= VP SECOND ================= -->
-<section id="panel-vp" class="role-panel">
+    <!-- MONOCOQUE -->
+    <section id="panel-mono" class="role-panel active">
+      <section class="section">
+        <div class="container hero-image">
+          <div class="hero-image-frame">
+            <img
+              src="../photos/RacingMono1.png"
+              alt="Monocoque and layup main visual"
+              style="--img-scale: 1.15; --img-x: 0px; --img-y: 0px;"
+            >
+          </div>
+        </div>
+      </section>
 
-  <section class="container grid-2">
-    <div class="card">
-      <h2>Role Overview</h2>
-      <p>
-        Vice-President role focused on global coordination,
-        project alignment and team organization across all departments.
-      </p>
-    </div>
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="monoOverviewTitle">Role Overview</h2>
+            <p data-i18n="monoOverviewText1">
+              As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.
+            </p>
+            <p class="muted" data-i18n="monoOverviewText2">
+              This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.
+            </p>
+          </div>
 
-    <div class="card">
-      <h2>Main Responsibilities</h2>
-      <ul>
-        <li>Team coordination</li>
-        <li>Planning & organization</li>
-        <li>Cross-team alignment</li>
-        <li>Competition preparation</li>
-      </ul>
-    </div>
-  </section>
+          <div class="card">
+            <h2 data-i18n="monoRoleTitle">Main Responsibilities</h2>
+            <ul>
+              <li data-i18n="monoRole1">Leading the Monocoque & Layup Division throughout production</li>
+              <li data-i18n="monoRole2">Supervising composite manufacturing activities and preparation steps</li>
+              <li data-i18n="monoRole3">Coordinating people, tasks and priorities within the division</li>
+              <li data-i18n="monoRole4">Ensuring manufacturing quality, process consistency and progress tracking</li>
+              <li data-i18n="monoRole5">Contributing to the final delivery of a key structural part of the race car</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-</section>
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="monoTechnicalTitle">Technical Dimension</h2>
+            <p data-i18n="monoTechnicalText1">
+              The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.
+            </p>
+            <p class="muted" data-i18n="monoTechnicalText2">
+              It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.
+            </p>
+          </div>
 
-</main>
+          <div class="card">
+            <h2 data-i18n="monoLeadershipTitle">Team & Production Leadership</h2>
+            <p data-i18n="monoLeadershipText1">
+              Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.
+            </p>
+            <p class="muted" data-i18n="monoLeadershipText2">
+              It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.
+            </p>
+          </div>
+        </div>
+      </section>
 
-<script>
-let currentRole = "mono";
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="monoGalleryTitle">Image Gallery</h2>
+          <div class="gallery">
+            <div class="gallery-item"><img src="../photos/RacingMono2.jpg" alt="Monocoque image 1"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono3.jpg" alt="Monocoque image 2"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono4.jpg" alt="Monocoque image 3"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono5.jpg" alt="Monocoque image 4"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono6.jpg" alt="Monocoque image 5"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono7.jpg" alt="Monocoque image 6"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono8.jpg" alt="Monocoque image 7"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono9.jpg" alt="Monocoque image 8"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono10.jpg" alt="Monocoque image 9"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono11.jpg" alt="Monocoque image 10"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono12.jpg" alt="Monocoque image 11"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono13.jpg" alt="Monocoque image 12"></div>
+          </div>
+        </div>
+      </section>
 
-function switchRole(role){
-  currentRole = role;
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="monoFilesTitle">Important Files</h2>
+          <div class="files">
+            <a class="file-link" href="../documents/RacingMono_Document1.pdf" target="_blank" data-i18n="monoFile1">Manufacturing report (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document2.pdf" target="_blank" data-i18n="monoFile2">Layup documentation (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document3.pdf" target="_blank" data-i18n="monoFile3">Production summary (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document4.pdf" target="_blank" data-i18n="monoFile4">Presentation deck (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document5.pdf" target="_blank" data-i18n="monoFile5">Additional document (PDF)</a>
+          </div>
+        </div>
+      </section>
+    </section>
 
-  document.querySelectorAll(".tab-btn").forEach(btn=>{
-    btn.classList.toggle("active", btn.dataset.role === role);
-  });
+    <!-- VICE PRESIDENT -->
+    <section id="panel-vp" class="role-panel">
+      <section class="section">
+        <div class="container hero-image">
+          <div class="hero-image-frame">
+            <img
+              src="../photos/RacingVP1.png"
+              alt="Vice-President main visual"
+              style="--img-scale: 1.2; --img-x: 0px; --img-y: 0px;"
+            >
+          </div>
+        </div>
+      </section>
 
-  document.querySelectorAll(".role-panel").forEach(p=>{
-    p.classList.remove("active");
-  });
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="vpOverviewTitle">Role Overview</h2>
+            <p data-i18n="vpOverviewText1">
+              As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.
+            </p>
+            <p class="muted" data-i18n="vpOverviewText2">
+              This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.
+            </p>
+          </div>
 
-  document.getElementById("panel-"+role).classList.add("active");
+          <div class="card">
+            <h2 data-i18n="vpRoleTitle">Main Responsibilities</h2>
+            <ul>
+              <li data-i18n="vpRole1">Supporting overall team coordination and decision-making</li>
+              <li data-i18n="vpRole2">Contributing to planning, organization and project follow-up</li>
+              <li data-i18n="vpRole3">Helping align technical progress with manufacturing reality and deadlines</li>
+              <li data-i18n="vpRole4">Supporting team structure, communication and day-to-day operations</li>
+              <li data-i18n="vpRole5">Taking part in competition preparation, tests and global execution</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-  const title = document.getElementById("roleTitleMain");
-  const lead = document.getElementById("roleLeadMain");
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="vpLeadershipTitle">Leadership Dimension</h2>
+            <p data-i18n="vpLeadershipText1">
+              This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.
+            </p>
+            <p class="muted" data-i18n="vpLeadershipText2">
+              It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.
+            </p>
+          </div>
 
-  if(role === "mono"){
-    title.textContent = "Monocoque & Layup Division Lead";
-    lead.textContent = "Led the manufacturing of the carbon monocoque and managed composite production.";
-  } else {
-    title.textContent = "Vice-President";
-    lead.textContent = "Supported global team management, coordination and project execution.";
-  }
-}
+          <div class="card">
+            <h2 data-i18n="vpImpactTitle">Impact</h2>
+            <p data-i18n="vpImpactText1">
+              Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.
+            </p>
+            <p class="muted" data-i18n="vpImpactText2">
+              It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.
+            </p>
+          </div>
+        </div>
+      </section>
 
-document.querySelectorAll(".tab-btn").forEach(btn=>{
-  btn.addEventListener("click", ()=>switchRole(btn.dataset.role));
-});
-</script>
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="vpGalleryTitle">Image Gallery</h2>
+          <div class="gallery">
+            <div class="gallery-item"><img src="../photos/RacingVP2.jpg" alt="Vice-President image 1"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP3.jpg" alt="Vice-President image 2"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP4.jpg" alt="Vice-President image 3"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP5.jpg" alt="Vice-President image 4"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP6.jpg" alt="Vice-President image 5"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP7.jpg" alt="Vice-President image 6"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP8.jpg" alt="Vice-President image 7"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP9.jpg" alt="Vice-President image 8"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP10.jpg" alt="Vice-President image 9"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP11.jpg" alt="Vice-President image 10"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP12.jpg" alt="Vice-President image 11"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP13.jpg" alt="Vice-President image 12"></div>
+          </div>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="vpFilesTitle">Important Files</h2>
+          <div class="files">
+            <a class="file-link" href="../documents/RacingVP_Document1.pdf" target="_blank" data-i18n="vpFile1">Annual overview report (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document2.pdf" target="_blank" data-i18n="vpFile2">Organization summary (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document3.pdf" target="_blank" data-i18n="vpFile3">Competition preparation notes (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document4.pdf" target="_blank" data-i18n="vpFile4">Presentation deck (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document5.pdf" target="_blank" data-i18n="vpFile5">Additional document (PDF)</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+        pageTag: "EPFL · EPFL Racing Team · Second Year",
+        tabVp: "Vice-President",
+        tabMono: "Monocoque & Layup Division Lead",
+
+        vpMainTitle: "Vice-President",
+        vpMainLead: "In my second year within the EPFL Racing Team, I combined two major responsibilities: Vice-President of the team and leader of the Monocoque & Layup Division. This role placed me at the intersection of technical execution, manufacturing leadership, team coordination and project organization.",
+
+        monoMainTitle: "Monocoque & Layup Division Lead",
+        monoMainLead: "In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position involved composites production leadership, division coordination and delivery responsibility on a core structural component of the vehicle.",
+
+        vpOverviewTitle: "Role Overview",
+        vpOverviewText1: "As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.",
+        vpOverviewText2: "This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.",
+
+        vpRoleTitle: "Main Responsibilities",
+        vpRole1: "Supporting overall team coordination and decision-making",
+        vpRole2: "Contributing to planning, organization and project follow-up",
+        vpRole3: "Helping align technical progress with manufacturing reality and deadlines",
+        vpRole4: "Supporting team structure, communication and day-to-day operations",
+        vpRole5: "Taking part in competition preparation, tests and global execution",
+
+        vpLeadershipTitle: "Leadership Dimension",
+        vpLeadershipText1: "This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.",
+        vpLeadershipText2: "It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.",
+
+        vpImpactTitle: "Impact",
+        vpImpactText1: "Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.",
+        vpImpactText2: "It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.",
+
+        vpGalleryTitle: "Image Gallery",
+        vpFilesTitle: "Important Files",
+        vpFile1: "Annual overview report (PDF)",
+        vpFile2: "Organization summary (PDF)",
+        vpFile3: "Competition preparation notes (PDF)",
+        vpFile4: "Presentation deck (PDF)",
+        vpFile5: "Additional document (PDF)",
+
+        monoOverviewTitle: "Role Overview",
+        monoOverviewText1: "As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.",
+        monoOverviewText2: "This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.",
+
+        monoRoleTitle: "Main Responsibilities",
+        monoRole1: "Leading the Monocoque & Layup Division throughout production",
+        monoRole2: "Supervising composite manufacturing activities and preparation steps",
+        monoRole3: "Coordinating people, tasks and priorities within the division",
+        monoRole4: "Ensuring manufacturing quality, process consistency and progress tracking",
+        monoRole5: "Contributing to the final delivery of a key structural part of the race car",
+
+        monoTechnicalTitle: "Technical Dimension",
+        monoTechnicalText1: "The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.",
+        monoTechnicalText2: "It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.",
+
+        monoLeadershipTitle: "Team & Production Leadership",
+        monoLeadershipText1: "Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.",
+        monoLeadershipText2: "It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.",
+
+        monoGalleryTitle: "Image Gallery",
+        monoFilesTitle: "Important Files",
+        monoFile1: "Manufacturing report (PDF)",
+        monoFile2: "Layup documentation (PDF)",
+        monoFile3: "Production summary (PDF)",
+        monoFile4: "Presentation deck (PDF)",
+        monoFile5: "Additional document (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+        pageTag: "EPFL · EPFL Racing Team · Deuxième année",
+        tabVp: "Vice-président",
+        tabMono: "Responsable division monocoque & layup",
+
+        vpMainTitle: "Vice-président",
+        vpMainLead: "Lors de ma deuxième année à l’EPFL Racing Team, j’ai cumulé deux responsabilités majeures : vice-président de l’équipe et responsable de la division Monocoque & Layup. Ce rôle me plaçait à l’interface entre exécution technique, leadership de production, coordination d’équipe et organisation globale du projet.",
+
+        monoMainTitle: "Responsable division monocoque & layup",
+        monoMainLead: "En parallèle de mon rôle de vice-président, j’ai dirigé la division Monocoque & Layup, en supervisant l’un des périmètres de fabrication les plus critiques de la voiture. Cette fonction impliquait le pilotage de la production composite, la coordination de la division et la responsabilité de livrer un composant structurel central du véhicule.",
+
+        vpOverviewTitle: "Vue d’ensemble du rôle",
+        vpOverviewText1: "En tant que vice-président de l’EPFL Racing Team, j’ai contribué à la gestion globale d’une importante organisation étudiante d’ingénierie mêlant développement technique, fabrication, logistique, planification et préparation des compétitions.",
+        vpOverviewText2: "Cette position demandait d’équilibrer vision stratégique et exécution opérationnelle, tout en aidant l’équipe à rester alignée entre les départements et tout au long du cycle de développement de la voiture.",
+
+        vpRoleTitle: "Responsabilités principales",
+        vpRole1: "Contribution à la coordination globale de l’équipe et à la prise de décision",
+        vpRole2: "Participation à la planification, à l’organisation et au suivi du projet",
+        vpRole3: "Aide à l’alignement entre avancement technique, réalité de fabrication et délais",
+        vpRole4: "Soutien à la structure de l’équipe, à la communication et aux opérations quotidiennes",
+        vpRole5: "Participation à la préparation des compétitions, aux tests et à l’exécution globale",
+
+        vpLeadershipTitle: "Dimension leadership",
+        vpLeadershipText1: "Ce rôle m’a poussé à aller au-delà de la seule exécution technique. Il demandait du leadership, de la priorisation, de la communication et la capacité à faire avancer plusieurs personnes dans la même direction dans un environnement exigeant et rapide.",
+        vpLeadershipText2: "Il a été particulièrement formateur pour comprendre que la performance dépend aussi de la structure de l’équipe, de la discipline projet et de la qualité de coordination entre de nombreux chantiers parallèles.",
+
+        vpImpactTitle: "Impact",
+        vpImpactText1: "Être vice-président m’a donné une vision beaucoup plus large de ce qu’il faut pour mener un projet de voiture de course, depuis la conception jusqu’à la production, aux essais puis à la compétition.",
+        vpImpactText2: "Cela a renforcé ma capacité à relier défis techniques et réalités organisationnelles, ce qui est essentiel dans tout environnement d’ingénierie haute performance.",
+
+        vpGalleryTitle: "Galerie d’images",
+        vpFilesTitle: "Fichiers importants",
+        vpFile1: "Rapport d’ensemble annuel (PDF)",
+        vpFile2: "Synthèse organisationnelle (PDF)",
+        vpFile3: "Notes de préparation compétition (PDF)",
+        vpFile4: "Présentation (PDF)",
+        vpFile5: "Document supplémentaire (PDF)",
+
+        monoOverviewTitle: "Vue d’ensemble du rôle",
+        monoOverviewText1: "En tant que responsable de la division Monocoque & Layup, j’étais en charge de l’un des éléments les plus critiques de la voiture : la fabrication et la livraison de la monocoque carbone, ainsi que l’organisation des travaux liés au layup.",
+        monoOverviewText2: "Ce rôle combinait fabrication composite, supervision technique, planification de production et coordination de plusieurs personnes travaillant sur l’un des composants les plus exigeants du véhicule.",
+
+        monoRoleTitle: "Responsabilités principales",
+        monoRole1: "Pilotage de la division Monocoque & Layup pendant la production",
+        monoRole2: "Supervision des activités de fabrication composite et des étapes de préparation",
+        monoRole3: "Coordination des personnes, des tâches et des priorités dans la division",
+        monoRole4: "Garantie de la qualité de fabrication, de la cohérence process et du suivi d’avancement",
+        monoRole5: "Contribution à la livraison finale d’une pièce structurelle majeure de la voiture",
+
+        monoTechnicalTitle: "Dimension technique",
+        monoTechnicalText1: "La monocoque est au centre de l’architecture de la voiture, à la fois d’un point de vue structurel et fabrication. Diriger cette division demandait de comprendre toute la chaîne de production, depuis la préparation et le layup jusqu’à l’organisation, l’exécution et la fiabilité de fabrication.",
+        monoTechnicalText2: "C’était un rôle où la rigueur technique, l’anticipation et la discipline atelier étaient essentielles, car les retards ou erreurs sur une telle pièce ont des conséquences majeures sur le reste du projet.",
+
+        monoLeadershipTitle: "Leadership d’équipe et de production",
+        monoLeadershipText1: "Au-delà de l’aspect technique, ce rôle signifiait aussi encadrer des personnes dans un environnement de production : répartir le travail, maintenir la dynamique, résoudre les problèmes du quotidien et garder la division alignée avec le planning global de l’équipe.",
+        monoLeadershipText2: "Cela a été l’une des expériences de leadership les plus intenses et formatrices de mon parcours dans l’équipe, car elle demandait à la fois compréhension technique et forte capacité d’exécution sous pression.",
+
+        monoGalleryTitle: "Galerie d’images",
+        monoFilesTitle: "Fichiers importants",
+        monoFile1: "Rapport de fabrication (PDF)",
+        monoFile2: "Documentation layup (PDF)",
+        monoFile3: "Synthèse de production (PDF)",
+        monoFile4: "Présentation (PDF)",
+        monoFile5: "Document supplémentaire (PDF)"
+      }
+    };
+
+    let currentLang = "en";
+    let currentRole = "mono";
+
+    function applyTranslations(lang) {
+      currentLang = lang;
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      updateMainHero();
+    }
+
+    function updateMainHero() {
+      const dict = translations[currentLang] || translations.en;
+      const titleEl = document.getElementById("roleTitleMain");
+      const leadEl = document.getElementById("roleLeadMain");
+
+      if (currentRole === "mono") {
+        titleEl.textContent = dict.monoMainTitle;
+        leadEl.textContent = dict.monoMainLead;
+      } else {
+        titleEl.textContent = dict.vpMainTitle;
+        leadEl.textContent = dict.vpMainLead;
+      }
+    }
+
+    function switchRole(role) {
+      currentRole = role;
+
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.role === role);
+      });
+
+      document.querySelectorAll(".role-panel").forEach((panel) => {
+        panel.classList.remove("active");
+      });
+
+      const activePanel = document.getElementById(`panel-${role}`);
+      if (activePanel) activePanel.classList.add("active");
+
+      updateMainHero();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => switchRole(btn.dataset.role));
+      });
+    });
+  </script>
 </body>
 </html>
