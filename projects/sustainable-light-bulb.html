@@ -9,7 +9,7 @@
       --bg:#f4f1ef;
       --text:#171717;
       --muted:#5f5f5f;
-      --green:#1f7a57;
+      --red:#d60000;
       --card:#ffffff;
       --shadow:0 20px 60px rgba(0,0,0,.08);
       --radius:28px;
@@ -47,7 +47,7 @@
     }
 
     .back{
-      color:var(--green);
+      color:var(--red);
       font-weight:800;
     }
 
@@ -59,8 +59,8 @@
       display:inline-block;
       padding:.4rem .75rem;
       border-radius:999px;
-      background:#e6f1ec;
-      color:var(--green);
+      background:#f7e5e5;
+      color:#9b0000;
       font-size:.82rem;
       font-weight:800;
       margin-bottom:1rem;
@@ -111,22 +111,62 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main class="hero">
     <div class="container">
-      <div class="tag">Sustainable Design</div>
-      <h1>Sustainable light bulb</h1>
-      <p class="lead">
+      <div class="tag" data-i18n="projectTag">Sustainable Design</div>
+      <h1 data-i18n="projectTitle">Sustainable light bulb</h1>
+      <p class="lead" data-i18n="projectLead">
         Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.
       </p>
 
       <div class="image-wrap">
-        <img src="../photos/Soon.png" alt="Sustainable light bulb project image">
+        <img src="../photos/SustainableBulbHero.png" alt="Sustainable light bulb project image">
       </div>
     </div>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+        projectTag: "Sustainable Design",
+        projectTitle: "Sustainable light bulb",
+        projectLead: "Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle."
+      },
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+        projectTag: "Design durable",
+        projectTitle: "Ampoule durable",
+        projectLead: "Redesign d’une ampoule avec un accent renforcé sur la circularité, la modularité, l’optimisation matière et une meilleure durabilité sur l’ensemble du cycle de vie du produit."
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
