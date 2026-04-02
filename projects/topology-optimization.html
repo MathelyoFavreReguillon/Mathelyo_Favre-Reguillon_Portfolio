@@ -1,1 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DfAM & Topology Optimization | Mathélyo Favre-Réguillon</title>
+  <style>
+    :root{
+      --bg:#f4f1ef;
+      --text:#171717;
+      --muted:#5f5f5f;
+      --red:#d60000;
+      --card:#ffffff;
+      --shadow:0 20px 60px rgba(0,0,0,.08);
+      --radius:28px;
+      --max:1100px;
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 2rem));
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(244,241,239,.82);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 0;
+    }
+
+    .back{
+      color:var(--red);
+      font-weight:800;
+    }
+
+    .hero{
+      padding:3rem 0 2rem;
+    }
+
+    h1,h2,h3{
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin:0 0 1rem;
+    }
+
+    h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
+    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
+    h3{font-size:1.2rem}
+
+    .lead{
+      font-size:1.1rem;
+      color:#333;
+      max-width:880px;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:.82rem;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      background:#f7e5e5;
+      color:#9b0000;
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+
+    .hero-image,
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-image{
+      padding:1rem;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
+    }
+
+    .section{
+      padding:1.5rem 0;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.2rem;
+    }
+
+    .card{
+      padding:1.5rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
+      width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .files{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .file-link{
+      display:block;
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
+    }
+
+    .muted{color:var(--muted)}
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width: 800px){
+      .grid-2,.gallery{grid-template-columns:1fr}
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tag" data-i18n="topoTag">EPFL · Additive Manufacturing · Topology Optimization</div>
+        <h1 data-i18n="topoTitle">DfAM & Topology Optimization</h1>
+        <p class="lead" data-i18n="topoLead">
+          Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container hero-image">
+        <img src="../photos/topo-main.png" alt="DfAM and topology optimization main visual">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="topoOverviewTitle">Project Overview</h2>
+          <p data-i18n="topoOverviewText1">
+            This project explores how additive manufacturing changes the way parts should be designed, and how topology optimization can be used to generate lightweight, high-performance geometries adapted to these new manufacturing freedoms.
+          </p>
+          <p class="muted" data-i18n="topoOverviewText2">
+            The work was structured as a literature review supported by a full presentation and a written report, covering Design for Additive Manufacturing principles, optimization methods, production technologies, industrial limits and a practical case study linked to EPFL Racing Team.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="topoContribTitle">Key Contributions</h2>
+          <ul>
+            <li data-i18n="topoContrib1">Research and synthesis on the relationship between DfAM and topology optimization</li>
+            <li data-i18n="topoContrib2">Study of optimization workflows, structural constraints and manufacturability limits</li>
+            <li data-i18n="topoContrib3">Comparison of software tools such as Altair Inspire, nTopology, Fusion, Siemens NX, Ansys and 3DEXPERIENCE</li>
+            <li data-i18n="topoContrib4">Review of additive manufacturing processes for topology-optimized parts</li>
+            <li data-i18n="topoContrib5">Contribution to the EPFL Racing Team upright case study and technical communication material</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="topoDfamTitle">Design for Additive Manufacturing</h2>
+          <p data-i18n="topoDfamText1">
+            A central idea of the project is that additive manufacturing does not remove constraints, but transforms them. Designing for AM therefore means using geometric freedom, functional integration and lightweight strategies while also accounting for support generation, build orientation, anisotropy and post-processing.
+          </p>
+          <p class="muted" data-i18n="topoDfamText2">
+            The study highlights the transition from simple part replacement to real AM-oriented redesign, where components can be rethought to reduce mass, integrate functions and improve overall performance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="topoToTitle">Topology Optimization Principles</h2>
+          <p data-i18n="topoToText1">
+            Topology optimization is presented as a computational method that searches for the best material distribution inside a design space in order to maximize structural performance under defined constraints.
+          </p>
+          <p class="muted" data-i18n="topoToText2">
+            The project reviews major optimization families such as SIMP density-based methods, evolutionary methods like ESO/BESO, and the role of post-processing to convert raw optimization outputs into manufacturable geometries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="topoConstraintsTitle">Rules & Constraints</h2>
+          <ul>
+            <li data-i18n="topoConstraints1">Mechanical constraints: stiffness, displacement, stress and dynamic behaviour</li>
+            <li data-i18n="topoConstraints2">Geometric constraints: minimum feature size, connectivity and printable thickness</li>
+            <li data-i18n="topoConstraints3">Manufacturing limits: overhang angles, unsupported holes and powder removal</li>
+            <li data-i18n="topoConstraints4">Build orientation effects on anisotropy, fatigue and support strategy</li>
+            <li data-i18n="topoConstraints5">Need to integrate manufacturing constraints early to avoid impractical “optimal” shapes</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="topoSoftwareTitle">Software & Workflow</h2>
+          <p data-i18n="topoSoftwareText1">
+            A significant part of the work focused on the digital chain from optimization to fabrication: defining the design space, applying loads and boundary conditions, running topology optimization, reconstructing geometry, validating the part and preparing it for additive manufacturing.
+          </p>
+          <p class="muted" data-i18n="topoSoftwareText2">
+            The study compares how different software environments address this chain, from CAD integration and implicit modeling to simulation, printing constraints and preparation for industrial production.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="topoProcessTitle">Additive Manufacturing Processes</h2>
+          <p data-i18n="topoProcessText1">
+            The project also reviews the main additive manufacturing technologies used for topology-optimized parts, from early-stage prototyping processes to structural metal production methods.
+          </p>
+          <p class="muted" data-i18n="topoProcessText2">
+            Particular attention is given to the trade-offs between resolution, mechanical performance, support requirements, surface quality, cost and suitability for complex optimized shapes, with laser powder bed fusion standing out as the main industrial solution for high-performance structural parts.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="topoBenefitsTitle">Advantages & Limitations</h2>
+          <ul>
+            <li data-i18n="topoBenefits1">Mass reduction while maintaining stiffness and strength targets</li>
+            <li data-i18n="topoBenefits2">Part consolidation and integration of internal or multifunctional features</li>
+            <li data-i18n="topoBenefits3">Strong synergy with AM for organic and highly efficient geometries</li>
+            <li data-i18n="topoBenefits4">Limitations linked to computation time, smoothing, post-processing and standards maturity</li>
+            <li data-i18n="topoBenefits5">Real-world performance still depends on process effects such as anisotropy, residual stresses and manufacturing quality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="topoCaseTitle">EPFL Racing Team Case Study</h2>
+          <p data-i18n="topoCaseText1">
+            The case study focuses on the upright developed for the EPFL Racing Team, a highly loaded mechanical component linking suspension elements, braking interfaces, gearbox integration and motor housing while also incorporating cooling functions.
+          </p>
+          <p class="muted" data-i18n="topoCaseText2">
+            This example shows why topology optimization is particularly relevant in motorsport: the upright is a structural and unsprung component, so reducing mass while maintaining stiffness directly contributes to vehicle performance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="topoOutcomeTitle">Project Outcome</h2>
+          <p data-i18n="topoOutcomeText1">
+            Beyond the technical content, this project demonstrates the full reasoning chain behind modern high-performance design: understanding AM-specific constraints, using topology optimization intelligently, selecting the right process and translating an optimized concept into a realistic engineering solution.
+          </p>
+          <p class="muted" data-i18n="topoOutcomeText2">
+            It also reflects a strong communication component through the production of a complete report and a scientific-style presentation synthesizing the main conclusions of the study.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="topoGalleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/topo1.png" alt="Topology optimization gallery image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/topo2.png" alt="Topology optimization gallery image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/topo3.png" alt="Topology optimization gallery image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/topo4.png" alt="Topology optimization gallery image 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="topoFilesTitle">Important Files</h2>
+        <div class="files">
+          <a class="file-link" href="../documents/AdditiveManufacturing_Report.pdf" target="_blank" data-i18n="topoFile1">Project report (PDF)</a>
+          <a class="file-link" href="../documents/AdditiveManufacturing_Presentation.pdf" target="_blank" data-i18n="topoFile2">Presentation (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        topoTag: "EPFL · Additive Manufacturing · Topology Optimization",
+        topoTitle: "DfAM & Topology Optimization",
+        topoLead: "Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright.",
+
+        topoOverviewTitle: "Project Overview",
+        topoOverviewText1: "This project explores how additive manufacturing changes the way parts should be designed, and how topology optimization can be used to generate lightweight, high-performance geometries adapted to these new manufacturing freedoms.",
+        topoOverviewText2: "The work was structured as a literature review supported by a full presentation and a written report, covering Design for Additive Manufacturing principles, optimization methods, production technologies, industrial limits and a practical case study linked to EPFL Racing Team.",
+
+        topoContribTitle: "Key Contributions",
+        topoContrib1: "Research and synthesis on the relationship between DfAM and topology optimization",
+        topoContrib2: "Study of optimization workflows, structural constraints and manufacturability limits",
+        topoContrib3: "Comparison of software tools such as Altair Inspire, nTopology, Fusion, Siemens NX, Ansys and 3DEXPERIENCE",
+        topoContrib4: "Review of additive manufacturing processes for topology-optimized parts",
+        topoContrib5: "Contribution to the EPFL Racing Team upright case study and technical communication material",
+
+        topoDfamTitle: "Design for Additive Manufacturing",
+        topoDfamText1: "A central idea of the project is that additive manufacturing does not remove constraints, but transforms them. Designing for AM therefore means using geometric freedom, functional integration and lightweight strategies while also accounting for support generation, build orientation, anisotropy and post-processing.",
+        topoDfamText2: "The study highlights the transition from simple part replacement to real AM-oriented redesign, where components can be rethought to reduce mass, integrate functions and improve overall performance.",
+
+        topoToTitle: "Topology Optimization Principles",
+        topoToText1: "Topology optimization is presented as a computational method that searches for the best material distribution inside a design space in order to maximize structural performance under defined constraints.",
+        topoToText2: "The project reviews major optimization families such as SIMP density-based methods, evolutionary methods like ESO/BESO, and the role of post-processing to convert raw optimization outputs into manufacturable geometries.",
+
+        topoConstraintsTitle: "Rules & Constraints",
+        topoConstraints1: "Mechanical constraints: stiffness, displacement, stress and dynamic behaviour",
+        topoConstraints2: "Geometric constraints: minimum feature size, connectivity and printable thickness",
+        topoConstraints3: "Manufacturing limits: overhang angles, unsupported holes and powder removal",
+        topoConstraints4: "Build orientation effects on anisotropy, fatigue and support strategy",
+        topoConstraints5: "Need to integrate manufacturing constraints early to avoid impractical “optimal” shapes",
+
+        topoSoftwareTitle: "Software & Workflow",
+        topoSoftwareText1: "A significant part of the work focused on the digital chain from optimization to fabrication: defining the design space, applying loads and boundary conditions, running topology optimization, reconstructing geometry, validating the part and preparing it for additive manufacturing.",
+        topoSoftwareText2: "The study compares how different software environments address this chain, from CAD integration and implicit modeling to simulation, printing constraints and preparation for industrial production.",
+
+        topoProcessTitle: "Additive Manufacturing Processes",
+        topoProcessText1: "The project also reviews the main additive manufacturing technologies used for topology-optimized parts, from early-stage prototyping processes to structural metal production methods.",
+        topoProcessText2: "Particular attention is given to the trade-offs between resolution, mechanical performance, support requirements, surface quality, cost and suitability for complex optimized shapes, with laser powder bed fusion standing out as the main industrial solution for high-performance structural parts.",
+
+        topoBenefitsTitle: "Advantages & Limitations",
+        topoBenefits1: "Mass reduction while maintaining stiffness and strength targets",
+        topoBenefits2: "Part consolidation and integration of internal or multifunctional features",
+        topoBenefits3: "Strong synergy with AM for organic and highly efficient geometries",
+        topoBenefits4: "Limitations linked to computation time, smoothing, post-processing and standards maturity",
+        topoBenefits5: "Real-world performance still depends on process effects such as anisotropy, residual stresses and manufacturing quality",
+
+        topoCaseTitle: "EPFL Racing Team Case Study",
+        topoCaseText1: "The case study focuses on the upright developed for the EPFL Racing Team, a highly loaded mechanical component linking suspension elements, braking interfaces, gearbox integration and motor housing while also incorporating cooling functions.",
+        topoCaseText2: "This example shows why topology optimization is particularly relevant in motorsport: the upright is a structural and unsprung component, so reducing mass while maintaining stiffness directly contributes to vehicle performance.",
+
+        topoOutcomeTitle: "Project Outcome",
+        topoOutcomeText1: "Beyond the technical content, this project demonstrates the full reasoning chain behind modern high-performance design: understanding AM-specific constraints, using topology optimization intelligently, selecting the right process and translating an optimized concept into a realistic engineering solution.",
+        topoOutcomeText2: "It also reflects a strong communication component through the production of a complete report and a scientific-style presentation synthesizing the main conclusions of the study.",
+
+        topoGalleryTitle: "Image Gallery",
+
+        topoFilesTitle: "Important Files",
+        topoFile1: "Project report (PDF)",
+        topoFile2: "Presentation (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        topoTag: "EPFL · Fabrication additive · Optimisation topologique",
+        topoTitle: "DfAM & optimisation topologique",
+        topoLead: "Revue de littérature et étude d’ingénierie sur l’intégration de l’optimisation topologique dans les démarches de Design for Additive Manufacturing, avec un focus sur les outils logiciels, les contraintes de fabrication, les procédés additifs et un case study basé sur l’upright de l’EPFL Racing Team.",
+
+        topoOverviewTitle: "Vue d’ensemble du projet",
+        topoOverviewText1: "Ce projet explore la manière dont la fabrication additive transforme la conception mécanique, et comment l’optimisation topologique peut être utilisée pour générer des géométries légères et performantes adaptées à ces nouvelles libertés de fabrication.",
+        topoOverviewText2: "Le travail a été structuré comme une revue de littérature appuyée par une présentation complète et un rapport écrit, en couvrant les principes du DfAM, les méthodes d’optimisation, les technologies de production, les limites industrielles et un cas pratique lié à l’EPFL Racing Team.",
+
+        topoContribTitle: "Contributions clés",
+        topoContrib1: "Recherche et synthèse sur le lien entre DfAM et optimisation topologique",
+        topoContrib2: "Étude des workflows d’optimisation, des contraintes structurelles et des limites de fabricabilité",
+        topoContrib3: "Comparaison d’outils logiciels comme Altair Inspire, nTopology, Fusion, Siemens NX, Ansys et 3DEXPERIENCE",
+        topoContrib4: "Revue des procédés de fabrication additive pour les pièces optimisées topologiquement",
+        topoContrib5: "Contribution au case study de l’upright de l’EPFL Racing Team et au support de communication technique",
+
+        topoDfamTitle: "Design for Additive Manufacturing",
+        topoDfamText1: "Une idée centrale du projet est que la fabrication additive ne supprime pas les contraintes, mais les transforme. Concevoir pour l’AM consiste donc à exploiter la liberté géométrique, l’intégration fonctionnelle et les stratégies d’allègement tout en tenant compte des supports, de l’orientation de fabrication, de l’anisotropie et du post-traitement.",
+        topoDfamText2: "L’étude met en avant la transition entre une simple reproduction de pièce et une véritable refonte orientée fabrication additive, où les composants peuvent être repensés pour réduire la masse, intégrer plusieurs fonctions et améliorer les performances globales.",
+
+        topoToTitle: "Principes de l’optimisation topologique",
+        topoToText1: "L’optimisation topologique est présentée comme une méthode de calcul visant à trouver la meilleure répartition de matière dans un espace de conception afin de maximiser les performances structurelles sous contraintes données.",
+        topoToText2: "Le projet passe en revue les grandes familles d’algorithmes comme les méthodes de type SIMP, les approches évolutionnaires ESO/BESO, ainsi que l’importance du post-traitement pour transformer les résultats bruts en géométries fabricables.",
+
+        topoConstraintsTitle: "Règles & contraintes",
+        topoConstraints1: "Contraintes mécaniques : rigidité, déplacement, contrainte et comportement dynamique",
+        topoConstraints2: "Contraintes géométriques : taille minimale de détail, connectivité et épaisseur imprimable",
+        topoConstraints3: "Limites de fabrication : angles de surplomb, trous non supportés et évacuation de poudre",
+        topoConstraints4: "Effets de l’orientation de fabrication sur l’anisotropie, la fatigue et la stratégie de support",
+        topoConstraints5: "Nécessité d’intégrer tôt les contraintes de fabrication pour éviter des formes “optimales” irréalistes",
+
+        topoSoftwareTitle: "Logiciels & workflow",
+        topoSoftwareText1: "Une partie importante du travail a porté sur la chaîne numérique allant de l’optimisation à la fabrication : définition de l’espace de conception, application des chargements et conditions aux limites, calcul d’optimisation, reconstruction géométrique, validation et préparation à l’impression additive.",
+        topoSoftwareText2: "L’étude compare la manière dont différents environnements logiciels traitent cette chaîne, depuis l’intégration CAO et la modélisation implicite jusqu’à la simulation, les contraintes d’impression et la préparation à une production industrielle.",
+
+        topoProcessTitle: "Procédés de fabrication additive",
+        topoProcessText1: "Le projet passe aussi en revue les principales technologies de fabrication additive utilisées pour les pièces optimisées topologiquement, depuis les procédés de prototypage jusqu’aux procédés métalliques structurels.",
+        topoProcessText2: "Une attention particulière est portée aux compromis entre résolution, performances mécaniques, besoin en supports, qualité de surface, coût et aptitude à produire des formes complexes, avec la fusion sur lit de poudre laser comme solution industrielle principale pour les pièces structurelles à haute performance.",
+
+        topoBenefitsTitle: "Avantages & limites",
+        topoBenefits1: "Réduction de masse tout en conservant les objectifs de rigidité et de résistance",
+        topoBenefits2: "Consolidation de pièces et intégration de fonctions internes ou multifonctionnelles",
+        topoBenefits3: "Forte synergie avec l’AM pour des géométries organiques et très efficaces",
+        topoBenefits4: "Limites liées au temps de calcul, au lissage, au post-traitement et à la maturité des standards",
+        topoBenefits5: "Les performances réelles restent dépendantes d’effets procédé comme l’anisotropie, les contraintes résiduelles et la qualité de fabrication",
+
+        topoCaseTitle: "Case study EPFL Racing Team",
+        topoCaseText1: "Le case study se concentre sur l’upright développé pour l’EPFL Racing Team, un composant mécanique fortement sollicité qui relie les éléments de suspension, les interfaces de freinage, l’intégration de la boîte de vitesses et le logement moteur, tout en intégrant aussi une fonction de refroidissement.",
+        topoCaseText2: "Cet exemple montre pourquoi l’optimisation topologique est particulièrement pertinente en sport automobile : l’upright est une pièce structurelle et non suspendue, donc réduire sa masse tout en gardant une forte rigidité contribue directement aux performances du véhicule.",
+
+        topoOutcomeTitle: "Résultat du projet",
+        topoOutcomeText1: "Au-delà du contenu technique, ce projet illustre toute la chaîne de raisonnement derrière la conception mécanique haute performance moderne : comprendre les contraintes propres à l’AM, utiliser l’optimisation topologique de manière pertinente, choisir le bon procédé et transformer un concept optimisé en solution d’ingénierie réaliste.",
+        topoOutcomeText2: "Il reflète aussi une forte dimension de communication technique à travers la production d’un rapport complet et d’une présentation de type scientifique synthétisant les principales conclusions de l’étude.",
+
+        topoGalleryTitle: "Galerie d’images",
+
+        topoFilesTitle: "Fichiers importants",
+        topoFile1: "Rapport du projet (PDF)",
+        topoFile2: "Présentation (PDF)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
+</body>
+</html>
