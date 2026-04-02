@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>Thin Si₃N₄ PVD Coatings | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -59,20 +59,19 @@
       padding:3rem 0 2rem;
     }
 
-    h1,h2,h3{
+    h1,h2{
       line-height:1.05;
       letter-spacing:-.04em;
       margin:0 0 1rem;
     }
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
-    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
-    h3{font-size:1.2rem}
+    h2{font-size:clamp(1.7rem, 4vw, 2.45rem)}
 
     .lead{
-      font-size:1.1rem;
+      font-size:1.08rem;
       color:#333;
-      max-width:800px;
+      max-width:880px;
     }
 
     .tag{
@@ -86,6 +85,10 @@
       margin-bottom:1rem;
     }
 
+    .section{
+      padding:1.5rem 0;
+    }
+
     .hero-image,
     .card{
       background:var(--card);
@@ -94,14 +97,21 @@
       overflow:hidden;
     }
 
-    .hero-image img{
-      width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
+    .hero-image{
+      padding:1rem;
     }
 
-    .section{
-      padding:1.5rem 0;
+    .hero-image img{
+      width:100%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
+    }
+
+    .card{
+      padding:1.5rem;
     }
 
     .grid-2{
@@ -110,8 +120,42 @@
       gap:1.2rem;
     }
 
-    .card{
-      padding:1.5rem;
+    .facts{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .fact{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .fact strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:.2rem;
+    }
+
+    .results{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .result{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .result strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.35rem;
     }
 
     .gallery{
@@ -120,11 +164,31 @@
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:.75rem;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
     }
 
     .files{
@@ -139,60 +203,125 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
 
-    @media (max-width: 800px){
-      .grid-2,.gallery{grid-template-columns:1fr}
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width: 900px){
+      .grid-2,
+      .results,
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="projectTag">EPFL · Surface Analysis · XPS Characterization</div>
+        <h1 data-i18n="projectTitle">Assessment of Thin Si₃N₄ PVD Coatings</h1>
+        <p class="lead" data-i18n="projectLead">
+          Experimental characterization of thin silicon nitride coatings deposited on silicon wafers, with a focus on contamination detection, Si/N stoichiometry, coating thickness and interface quality using X-ray Photoelectron Spectroscopy.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/XrayMain.png" alt="Thin Si3N4 PVD coatings main visual">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="overviewTitle">Project Overview</h2>
+          <p data-i18n="overviewText1">
+            This laboratory project focused on the assessment of two thin Si₃N₄ PVD coatings deposited on silicon wafers. The two films showed different visual appearances and different electrical behaviour, which motivated a deeper investigation of their surface chemistry and interface quality.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="overviewText2">
+            The main goal was to determine whether the observed differences were caused by contamination, deviations from the expected silicon nitride stoichiometry, or changes in coating thickness and interface quality. The work combined survey spectra, high-resolution spectra and depth profiling to build a structured interpretation of both samples.
+          </p>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <strong data-i18n="fact1Title">Material system</strong>
+            <span class="muted" data-i18n="fact1Text">Thin Si₃N₄ coatings deposited by PVD on silicon wafers.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact2Title">Samples studied</strong>
+            <span class="muted" data-i18n="fact2Text">Sample A: green-blue appearance. Sample B: purple appearance.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact3Title">Technique used</strong>
+            <span class="muted" data-i18n="fact3Text">XPS analysis with survey spectra, high-resolution spectra and depth profiling.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact4Title">Main objective</strong>
+            <span class="muted" data-i18n="fact4Text">Identify contamination, evaluate stoichiometry and explain the color difference between the two coatings.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="methodTitle">Methodology</h2>
+          <p data-i18n="methodText1">
+            X-ray Photoelectron Spectroscopy was selected as the main characterization technique because it provides access to surface chemical composition, oxidation states, contamination detection and the Si/N atomic ratio. In addition to surface information, depth profiling was used to follow the evolution of elemental concentrations through the film thickness and across the coating/substrate interface.
+          </p>
+          <p class="muted" data-i18n="methodText2">
+            The workflow included survey spectra to identify the main elements, peak correction using the carbon reference, and depth profile interpretation using the evolution of nitrogen, silicon, oxygen and carbon as a function of sputter time. This made it possible to compare both samples consistently and identify differences in thickness and interface quality.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="goalsTitle">Investigation Goals</h2>
+          <p data-i18n="goalsText1">
+            The study was structured around three main questions: whether carbon or oxygen contamination was present, whether the coatings matched the expected Si₃N₄ stoichiometry, and whether the interface with the silicon substrate was clean and well defined.
+          </p>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="goal1">Detect possible carbon and oxygen contamination</li>
+            <li data-i18n="goal2">Determine the Si/N stoichiometry of the coating</li>
+            <li data-i18n="goal3">Investigate the Si₃N₄/Si interface quality</li>
+            <li data-i18n="goal4">Explain the origin of the visual color difference between samples A and B</li>
           </ul>
         </div>
       </div>
@@ -200,26 +329,202 @@
 
     <section class="section">
       <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+        <h2 data-i18n="resultsTitle">Main Results</h2>
+        <p data-i18n="resultsText1">
+          Both samples showed comparable chemical compositions and both were slightly silicon-rich compared with ideal stoichiometric Si₃N₄. This means that stoichiometry alone does not explain the color difference observed between the two wafers.
+        </p>
+        <p class="muted" data-i18n="resultsText2">
+          The most relevant difference was the film thickness: sample A was found to be significantly thicker than sample B, by roughly 100 nm. In addition, sample A exhibited a sharper transition between coating and substrate, while sample B showed a broader interface with signs interpreted as redeposition of contaminants during sputtering.
+        </p>
+
+        <div class="results">
+          <div class="result">
+            <strong data-i18n="result1Title">Stoichiometry</strong>
+            <span class="muted" data-i18n="result1Text">Sample A: N/Si ≈ 1.11 · Sample B: N/Si ≈ 1.13 · both below ideal Si₃N₄ (1.33)</span>
+          </div>
+          <div class="result">
+            <strong data-i18n="result2Title">Thickness</strong>
+            <span class="muted" data-i18n="result2Text">Sample A ≈ 472–531 nm · Sample B ≈ 384–432 nm</span>
+          </div>
+          <div class="result">
+            <strong data-i18n="result3Title">Interpretation</strong>
+            <span class="muted" data-i18n="result3Text">Color difference mainly linked to thickness · Sample A judged as the higher-quality coating</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="analysisTitle">Engineering Interpretation</h2>
+        <p data-i18n="analysisText1">
+          From an engineering point of view, the project shows how surface analysis can distinguish between several possible causes of variation in thin-film performance. Even though oxygen and carbon were detected, these contaminants were not the dominant explanation for the visible difference between the samples.
+        </p>
+        <p class="muted" data-i18n="analysisText2">
+          The analysis instead pointed toward thickness and interface definition as the decisive parameters. Sample A presented a clearer and sharper coating-to-substrate transition, while sample B showed a broader gradient and evidence of redeposition effects, suggesting a less controlled layer quality.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="galleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/Xray1.png" alt="Si3N4 coated wafer samples">
+            <div class="caption" data-i18n="galleryCaption1">Visual comparison of the two coated wafer samples</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/Xray2.png" alt="XPS depth profile or results">
+            <div class="caption" data-i18n="galleryCaption2">Representative XPS result used for interpretation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="filesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../documents/X-ray_Report.pdf" target="_blank" data-i18n="file1">Project report – Thin Si₃N₄ PVD coatings (PDF)</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        projectTag: "EPFL · Surface Analysis · XPS Characterization",
+        projectTitle: "Assessment of Thin Si₃N₄ PVD Coatings",
+        projectLead: "Experimental characterization of thin silicon nitride coatings deposited on silicon wafers, with a focus on contamination detection, Si/N stoichiometry, coating thickness and interface quality using X-ray Photoelectron Spectroscopy.",
+
+        overviewTitle: "Project Overview",
+        overviewText1: "This laboratory project focused on the assessment of two thin Si₃N₄ PVD coatings deposited on silicon wafers. The two films showed different visual appearances and different electrical behaviour, which motivated a deeper investigation of their surface chemistry and interface quality.",
+        overviewText2: "The main goal was to determine whether the observed differences were caused by contamination, deviations from the expected silicon nitride stoichiometry, or changes in coating thickness and interface quality. The work combined survey spectra, high-resolution spectra and depth profiling to build a structured interpretation of both samples.",
+
+        fact1Title: "Material system",
+        fact1Text: "Thin Si₃N₄ coatings deposited by PVD on silicon wafers.",
+        fact2Title: "Samples studied",
+        fact2Text: "Sample A: green-blue appearance. Sample B: purple appearance.",
+        fact3Title: "Technique used",
+        fact3Text: "XPS analysis with survey spectra, high-resolution spectra and depth profiling.",
+        fact4Title: "Main objective",
+        fact4Text: "Identify contamination, evaluate stoichiometry and explain the color difference between the two coatings.",
+
+        methodTitle: "Methodology",
+        methodText1: "X-ray Photoelectron Spectroscopy was selected as the main characterization technique because it provides access to surface chemical composition, oxidation states, contamination detection and the Si/N atomic ratio. In addition to surface information, depth profiling was used to follow the evolution of elemental concentrations through the film thickness and across the coating/substrate interface.",
+        methodText2: "The workflow included survey spectra to identify the main elements, peak correction using the carbon reference, and depth profile interpretation using the evolution of nitrogen, silicon, oxygen and carbon as a function of sputter time. This made it possible to compare both samples consistently and identify differences in thickness and interface quality.",
+
+        goalsTitle: "Investigation Goals",
+        goalsText1: "The study was structured around three main questions: whether carbon or oxygen contamination was present, whether the coatings matched the expected Si₃N₄ stoichiometry, and whether the interface with the silicon substrate was clean and well defined.",
+        goal1: "Detect possible carbon and oxygen contamination",
+        goal2: "Determine the Si/N stoichiometry of the coating",
+        goal3: "Investigate the Si₃N₄/Si interface quality",
+        goal4: "Explain the origin of the visual color difference between samples A and B",
+
+        resultsTitle: "Main Results",
+        resultsText1: "Both samples showed comparable chemical compositions and both were slightly silicon-rich compared with ideal stoichiometric Si₃N₄. This means that stoichiometry alone does not explain the color difference observed between the two wafers.",
+        resultsText2: "The most relevant difference was the film thickness: sample A was found to be significantly thicker than sample B, by roughly 100 nm. In addition, sample A exhibited a sharper transition between coating and substrate, while sample B showed a broader interface with signs interpreted as redeposition of contaminants during sputtering.",
+
+        result1Title: "Stoichiometry",
+        result1Text: "Sample A: N/Si ≈ 1.11 · Sample B: N/Si ≈ 1.13 · both below ideal Si₃N₄ (1.33)",
+        result2Title: "Thickness",
+        result2Text: "Sample A ≈ 472–531 nm · Sample B ≈ 384–432 nm",
+        result3Title: "Interpretation",
+        result3Text: "Color difference mainly linked to thickness · Sample A judged as the higher-quality coating",
+
+        analysisTitle: "Engineering Interpretation",
+        analysisText1: "From an engineering point of view, the project shows how surface analysis can distinguish between several possible causes of variation in thin-film performance. Even though oxygen and carbon were detected, these contaminants were not the dominant explanation for the visible difference between the samples.",
+        analysisText2: "The analysis instead pointed toward thickness and interface definition as the decisive parameters. Sample A presented a clearer and sharper coating-to-substrate transition, while sample B showed a broader gradient and evidence of redeposition effects, suggesting a less controlled layer quality.",
+
+        galleryTitle: "Image Gallery",
+        galleryCaption1: "Visual comparison of the two coated wafer samples",
+        galleryCaption2: "Representative XPS result used for interpretation",
+
+        filesTitle: "Important Files",
+        file1: "Project report – Thin Si₃N₄ PVD coatings (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        projectTag: "EPFL · Analyse de surface · Caractérisation XPS",
+        projectTitle: "Évaluation de couches minces Si₃N₄ déposées par PVD",
+        projectLead: "Caractérisation expérimentale de couches minces de nitrure de silicium déposées sur des wafers en silicium, avec un focus sur la détection de contamination, la stœchiométrie Si/N, l’épaisseur du revêtement et la qualité de l’interface par spectroscopie XPS.",
+
+        overviewTitle: "Vue d’ensemble du projet",
+        overviewText1: "Ce travail pratique portait sur l’évaluation de deux couches minces de Si₃N₄ déposées par PVD sur des wafers en silicium. Les deux films présentaient un aspect visuel différent ainsi qu’un comportement électrique différent, ce qui a motivé une étude plus approfondie de leur chimie de surface et de la qualité de leur interface.",
+        overviewText2: "L’objectif principal était de déterminer si les différences observées provenaient d’une contamination, d’un écart à la stœchiométrie attendue du nitrure de silicium, ou bien de variations d’épaisseur et de qualité d’interface. Le travail a combiné spectres survey, spectres haute résolution et depth profiling afin de construire une interprétation structurée des deux échantillons.",
+
+        fact1Title: "Système matériau",
+        fact1Text: "Couches minces de Si₃N₄ déposées par PVD sur wafers en silicium.",
+        fact2Title: "Échantillons étudiés",
+        fact2Text: "Échantillon A : aspect vert-bleu. Échantillon B : aspect violet.",
+        fact3Title: "Technique utilisée",
+        fact3Text: "Analyse XPS avec spectres survey, spectres haute résolution et depth profiling.",
+        fact4Title: "Objectif principal",
+        fact4Text: "Identifier les contaminations, évaluer la stœchiométrie et expliquer la différence de couleur entre les deux couches.",
+
+        methodTitle: "Méthodologie",
+        methodText1: "La spectroscopie photoélectronique X a été choisie comme technique principale de caractérisation, car elle permet d’accéder à la composition chimique de surface, aux états d’oxydation, à la détection des contaminations et au rapport atomique Si/N. En complément de l’information de surface, le depth profiling a été utilisé pour suivre l’évolution des concentrations élémentaires à travers l’épaisseur du film et au niveau de l’interface couche/substrat.",
+        methodText2: "Le workflow comprenait l’analyse de spectres survey pour identifier les éléments principaux, un recalage des pics à l’aide du carbone de référence, puis l’interprétation des profils en profondeur à partir de l’évolution de l’azote, du silicium, de l’oxygène et du carbone en fonction du temps de pulvérisation. Cela a permis de comparer les deux échantillons de manière cohérente et d’identifier les différences d’épaisseur et de qualité d’interface.",
+
+        goalsTitle: "Objectifs de l’étude",
+        goalsText1: "L’étude s’articulait autour de trois questions principales : la présence éventuelle de contamination carbone ou oxygène, la conformité de la couche à la stœchiométrie attendue du Si₃N₄, et la qualité de l’interface entre le revêtement et le substrat de silicium.",
+        goal1: "Détecter une éventuelle contamination en carbone et en oxygène",
+        goal2: "Déterminer la stœchiométrie Si/N du revêtement",
+        goal3: "Étudier la qualité de l’interface Si₃N₄/Si",
+        goal4: "Expliquer l’origine de la différence visuelle entre les échantillons A et B",
+
+        resultsTitle: "Résultats principaux",
+        resultsText1: "Les deux échantillons ont montré des compositions chimiques proches et étaient légèrement riches en silicium par rapport au Si₃N₄ stœchiométrique idéal. Cela signifie que la stœchiométrie, à elle seule, n’explique pas la différence de couleur observée entre les deux wafers.",
+        resultsText2: "La différence la plus significative concernait l’épaisseur du film : l’échantillon A s’est révélé nettement plus épais que l’échantillon B, d’environ 100 nm. En parallèle, l’échantillon A présentait une transition plus nette entre la couche et le substrat, tandis que l’échantillon B montrait une interface plus diffuse, interprétée comme liée à des phénomènes de redéposition de contaminants lors de la pulvérisation.",
+
+        result1Title: "Stœchiométrie",
+        result1Text: "Échantillon A : N/Si ≈ 1,11 · Échantillon B : N/Si ≈ 1,13 · tous deux inférieurs au Si₃N₄ idéal (1,33)",
+        result2Title: "Épaisseur",
+        result2Text: "Échantillon A ≈ 472–531 nm · Échantillon B ≈ 384–432 nm",
+        result3Title: "Interprétation",
+        result3Text: "Différence de couleur principalement liée à l’épaisseur · Échantillon A considéré comme la couche de meilleure qualité",
+
+        analysisTitle: "Interprétation technique",
+        analysisText1: "D’un point de vue ingénierie, ce projet montre comment une analyse de surface permet de distinguer plusieurs causes possibles de variation de performance dans des couches minces. Même si de l’oxygène et du carbone ont été détectés, ces contaminations ne constituent pas l’explication principale de la différence visuelle entre les deux échantillons.",
+        analysisText2: "L’analyse a plutôt mis en évidence que l’épaisseur du film et la netteté de l’interface étaient les paramètres décisifs. L’échantillon A présentait une transition couche/substrat plus franche, alors que l’échantillon B montrait un gradient plus large et des indices de redéposition, suggérant une qualité de couche moins bien maîtrisée.",
+
+        galleryTitle: "Galerie d’images",
+        galleryCaption1: "Comparaison visuelle des deux wafers revêtus",
+        galleryCaption2: "Résultat XPS représentatif utilisé pour l’interprétation",
+
+        filesTitle: "Fichiers importants",
+        file1: "Rapport du projet – couches minces Si₃N₄ PVD (PDF)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
