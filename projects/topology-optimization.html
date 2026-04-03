@@ -71,9 +71,12 @@
     h3{font-size:1.2rem}
 
     .lead{
+      display:block;
+      width:100%;
+      max-width:none;
       font-size:1.1rem;
       color:#333;
-      max-width:880px;
+      margin:0;
     }
 
     .tag{
@@ -135,8 +138,9 @@
       padding:.8rem;
       min-height:320px;
       display:flex;
-      align-items:center;
+      flex-direction:column;
       justify-content:center;
+      gap:.75rem;
     }
 
     .gallery img{
@@ -147,6 +151,12 @@
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
+      text-align:left;
     }
 
     .files{
@@ -207,10 +217,10 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="topoTag">EPFL · Additive Manufacturing · Topology Optimization</div>
+        <div class="tag" data-i18n="topoTag">EPFL · Introduction to Additive Manufacturing · ME-413</div>
         <h1 data-i18n="topoTitle">DfAM & Topology Optimization</h1>
         <p class="lead" data-i18n="topoLead">
-          Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright.
+          Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright. The work was developed through a written report and a full presentation, linking DfAM principles, optimization methods, process selection and industrial limitations within a coherent design approach.
         </p>
       </div>
     </section>
@@ -222,17 +232,7 @@
     </section>
 
     <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="topoOverviewTitle">Project Overview</h2>
-          <p data-i18n="topoOverviewText1">
-            This project explores how additive manufacturing changes the way parts should be designed, and how topology optimization can be used to generate lightweight, high-performance geometries adapted to these new manufacturing freedoms.
-          </p>
-          <p class="muted" data-i18n="topoOverviewText2">
-            The work was structured as a literature review supported by a full presentation and a written report, covering Design for Additive Manufacturing principles, optimization methods, production technologies, industrial limits and a practical case study linked to EPFL Racing Team.
-          </p>
-        </div>
-
+      <div class="container">
         <div class="card">
           <h2 data-i18n="topoContribTitle">Key Contributions</h2>
           <ul>
@@ -321,7 +321,7 @@
     </section>
 
     <section class="section">
-      <div class="container grid-2">
+      <div class="container">
         <div class="card">
           <h2 data-i18n="topoCaseTitle">EPFL Racing Team Case Study</h2>
           <p data-i18n="topoCaseText1">
@@ -329,16 +329,6 @@
           </p>
           <p class="muted" data-i18n="topoCaseText2">
             This example shows why topology optimization is particularly relevant in motorsport: the upright is a structural and unsprung component, so reducing mass while maintaining stiffness directly contributes to vehicle performance.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="topoOutcomeTitle">Project Outcome</h2>
-          <p data-i18n="topoOutcomeText1">
-            Beyond the technical content, this project demonstrates the full reasoning chain behind modern high-performance design: understanding AM-specific constraints, using topology optimization intelligently, selecting the right process and translating an optimized concept into a realistic engineering solution.
-          </p>
-          <p class="muted" data-i18n="topoOutcomeText2">
-            It also reflects a strong communication component through the production of a complete report and a scientific-style presentation synthesizing the main conclusions of the study.
           </p>
         </div>
       </div>
@@ -349,16 +339,20 @@
         <h2 data-i18n="topoGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/OptiTopo2.png" alt="Topology optimization gallery image 1">
+            <img src="../photos/OptiTopo2.png" alt="Altair software">
+            <div class="caption" data-i18n="topoCaption1">Altair software</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/OptiTopo3.jpg" alt="Topology optimization gallery image 2">
+            <img src="../photos/OptiTopo3.jpg" alt="Stereolithography">
+            <div class="caption" data-i18n="topoCaption2">Stereolithography</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/OptiTopo4.png" alt="Topology optimization gallery image 3">
+            <img src="../photos/OptiTopo4.png" alt="Topology-optimized EPFL Racing Team part">
+            <div class="caption" data-i18n="topoCaption3">Topology-optimized EPFL Racing Team part</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/OptiTopo5.jpg" alt="Topology optimization gallery image 4">
+            <img src="../photos/OptiTopo5.jpg" alt="3DEXPERIENCE software">
+            <div class="caption" data-i18n="topoCaption4">3DEXPERIENCE software</div>
           </div>
         </div>
       </div>
@@ -380,13 +374,9 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        topoTag: "EPFL · Additive Manufacturing · Topology Optimization",
+        topoTag: "EPFL · Introduction to Additive Manufacturing · ME-413",
         topoTitle: "DfAM & Topology Optimization",
-        topoLead: "Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright.",
-
-        topoOverviewTitle: "Project Overview",
-        topoOverviewText1: "This project explores how additive manufacturing changes the way parts should be designed, and how topology optimization can be used to generate lightweight, high-performance geometries adapted to these new manufacturing freedoms.",
-        topoOverviewText2: "The work was structured as a literature review supported by a full presentation and a written report, covering Design for Additive Manufacturing principles, optimization methods, production technologies, industrial limits and a practical case study linked to EPFL Racing Team.",
+        topoLead: "Literature review and engineering study on the integration of topology optimization into Design for Additive Manufacturing workflows, with a focus on software tools, manufacturing constraints, additive processes and a case study based on the EPFL Racing Team upright. The work was developed through a written report and a full presentation, linking DfAM principles, optimization methods, process selection and industrial limitations within a coherent design approach.",
 
         topoContribTitle: "Key Contributions",
         topoContrib1: "Research and synthesis on the relationship between DfAM and topology optimization",
@@ -429,11 +419,11 @@
         topoCaseText1: "The case study focuses on the upright developed for the EPFL Racing Team, a highly loaded mechanical component linking suspension elements, braking interfaces, gearbox integration and motor housing while also incorporating cooling functions.",
         topoCaseText2: "This example shows why topology optimization is particularly relevant in motorsport: the upright is a structural and unsprung component, so reducing mass while maintaining stiffness directly contributes to vehicle performance.",
 
-        topoOutcomeTitle: "Project Outcome",
-        topoOutcomeText1: "Beyond the technical content, this project demonstrates the full reasoning chain behind modern high-performance design: understanding AM-specific constraints, using topology optimization intelligently, selecting the right process and translating an optimized concept into a realistic engineering solution.",
-        topoOutcomeText2: "It also reflects a strong communication component through the production of a complete report and a scientific-style presentation synthesizing the main conclusions of the study.",
-
         topoGalleryTitle: "Image Gallery",
+        topoCaption1: "Altair software",
+        topoCaption2: "Stereolithography",
+        topoCaption3: "Topology-optimized EPFL Racing Team part",
+        topoCaption4: "3DEXPERIENCE software",
 
         topoFilesTitle: "Important Files",
         topoFile1: "Project report (PDF)",
@@ -443,13 +433,9 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        topoTag: "EPFL · Fabrication additive · Optimisation topologique",
+        topoTag: "EPFL · Introduction à la fabrication additive · ME-413",
         topoTitle: "DfAM & optimisation topologique",
-        topoLead: "Revue de littérature et étude d’ingénierie sur l’intégration de l’optimisation topologique dans les démarches de Design for Additive Manufacturing, avec un focus sur les outils logiciels, les contraintes de fabrication, les procédés additifs et un case study basé sur l’upright de l’EPFL Racing Team.",
-
-        topoOverviewTitle: "Vue d’ensemble du projet",
-        topoOverviewText1: "Ce projet explore la manière dont la fabrication additive transforme la conception mécanique, et comment l’optimisation topologique peut être utilisée pour générer des géométries légères et performantes adaptées à ces nouvelles libertés de fabrication.",
-        topoOverviewText2: "Le travail a été structuré comme une revue de littérature appuyée par une présentation complète et un rapport écrit, en couvrant les principes du DfAM, les méthodes d’optimisation, les technologies de production, les limites industrielles et un cas pratique lié à l’EPFL Racing Team.",
+        topoLead: "Revue de littérature et étude d’ingénierie sur l’intégration de l’optimisation topologique dans les démarches de Design for Additive Manufacturing, avec un focus sur les outils logiciels, les contraintes de fabrication, les procédés additifs et un case study basé sur l’upright de l’EPFL Racing Team. Le travail a été développé à travers un rapport écrit et une présentation complète, en reliant principes DfAM, méthodes d’optimisation, choix procédé et limites industrielles dans une approche cohérente de conception.",
 
         topoContribTitle: "Contributions clés",
         topoContrib1: "Recherche et synthèse sur le lien entre DfAM et optimisation topologique",
@@ -492,11 +478,11 @@
         topoCaseText1: "Le case study se concentre sur l’upright développé pour l’EPFL Racing Team, un composant mécanique fortement sollicité qui relie les éléments de suspension, les interfaces de freinage, l’intégration de la boîte de vitesses et le logement moteur, tout en intégrant aussi une fonction de refroidissement.",
         topoCaseText2: "Cet exemple montre pourquoi l’optimisation topologique est particulièrement pertinente en sport automobile : l’upright est une pièce structurelle et non suspendue, donc réduire sa masse tout en gardant une forte rigidité contribue directement aux performances du véhicule.",
 
-        topoOutcomeTitle: "Résultat du projet",
-        topoOutcomeText1: "Au-delà du contenu technique, ce projet illustre toute la chaîne de raisonnement derrière la conception mécanique haute performance moderne : comprendre les contraintes propres à l’AM, utiliser l’optimisation topologique de manière pertinente, choisir le bon procédé et transformer un concept optimisé en solution d’ingénierie réaliste.",
-        topoOutcomeText2: "Il reflète aussi une forte dimension de communication technique à travers la production d’un rapport complet et d’une présentation de type scientifique synthétisant les principales conclusions de l’étude.",
-
         topoGalleryTitle: "Galerie d’images",
+        topoCaption1: "Logiciel Altair",
+        topoCaption2: "Stéréolithographie",
+        topoCaption3: "Pièce optimisée topologiquement de la Racing Team",
+        topoCaption4: "Logiciel 3DEXPERIENCE",
 
         topoFilesTitle: "Fichiers importants",
         topoFile1: "Rapport du projet (PDF)",
