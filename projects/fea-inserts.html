@@ -71,7 +71,8 @@
     .lead{
       font-size:1.08rem;
       color:#333;
-      max-width:880px;
+      max-width:none;
+      width:100%;
     }
 
     .tag{
@@ -189,6 +190,7 @@
     .caption{
       font-size:.95rem;
       color:var(--muted);
+      text-align:left;
     }
 
     .files{
@@ -253,7 +255,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="projectTag">EPFL · Finite Element Analysis · EPFL Racing Team</div>
+        <div class="tag" data-i18n="projectTag">EPFL · Finite Element Modelling and Simulation · ME-373</div>
         <h1 data-i18n="projectTitle">FEA of Suspension Inserts</h1>
         <p class="lead" data-i18n="projectLead">
           Finite element analysis of a double aluminium suspension insert developed for the EPFL Racing Team, with focus on stiffness, stress distribution and safety under representative traction, shear and torsion load cases.
@@ -359,20 +361,20 @@
         <h2 data-i18n="galleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/FEM1.png" alt="Insert geometry">
-            <div class="caption" data-i18n="galleryCaption1">Insert geometry and design</div>
+            <img src="../photos/FEM1.png" alt="Final mesh of the insert">
+            <div class="caption" data-i18n="galleryCaption1">Final mesh of the insert</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/FEM2.png" alt="Mesh view">
-            <div class="caption" data-i18n="galleryCaption2">Refined finite element mesh</div>
+            <img src="../photos/FEM2.png" alt="Torsion result">
+            <div class="caption" data-i18n="galleryCaption2">Torsion result</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/FEM3.PNG" alt="Traction results">
-            <div class="caption" data-i18n="galleryCaption3">Traction case results</div>
+            <img src="../photos/FEM3.PNG" alt="Traction result">
+            <div class="caption" data-i18n="galleryCaption3">Traction result</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/FEM4.png" alt="Shear results">
-            <div class="caption" data-i18n="galleryCaption4">Shear case and critical zone</div>
+            <img src="../photos/FEM4.png" alt="Shear result">
+            <div class="caption" data-i18n="galleryCaption4">Shear result</div>
           </div>
         </div>
       </div>
@@ -394,7 +396,7 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        projectTag: "EPFL · Finite Element Analysis · EPFL Racing Team",
+        projectTag: "EPFL · Finite Element Modelling and Simulation · ME-373",
         projectTitle: "FEA of Suspension Inserts",
         projectLead: "Finite element analysis of a double aluminium suspension insert developed for the EPFL Racing Team, with focus on stiffness, stress distribution and safety under representative traction, shear and torsion load cases.",
 
@@ -434,10 +436,10 @@
         result3Text: "Most critical case · σ<sub>max</sub> ≈ 535 MPa · FoS ≈ 0.944",
 
         galleryTitle: "Image Gallery",
-        galleryCaption1: "Insert geometry and design",
-        galleryCaption2: "Refined finite element mesh",
-        galleryCaption3: "Traction case results",
-        galleryCaption4: "Shear case and critical zone",
+        galleryCaption1: "Final mesh of the insert",
+        galleryCaption2: "Torsion result",
+        galleryCaption3: "Traction result",
+        galleryCaption4: "Shear result",
 
         filesTitle: "Important Files",
         file1: "Finite element analysis report (PDF)",
@@ -447,7 +449,7 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        projectTag: "EPFL · Analyse par éléments finis · EPFL Racing Team",
+        projectTag: "EPFL · Modélisation et simulation par éléments finis · ME-373",
         projectTitle: "Analyse FEM d’inserts de suspension",
         projectLead: "Analyse par éléments finis d’un insert double en aluminium développé pour l’EPFL Racing Team, avec un focus sur la rigidité, la distribution des contraintes et la sécurité sous des cas de charge représentatifs en traction, cisaillement et torsion.",
 
@@ -487,10 +489,10 @@
         result3Text: "Cas le plus critique · σ<sub>max</sub> ≈ 535 MPa · FoS ≈ 0,944",
 
         galleryTitle: "Galerie d’images",
-        galleryCaption1: "Géométrie et design de l’insert",
-        galleryCaption2: "Maillage éléments finis raffiné",
-        galleryCaption3: "Résultats du cas en traction",
-        galleryCaption4: "Cas en cisaillement et zone critique",
+        galleryCaption1: "Maillage final de l’insert",
+        galleryCaption2: "Résultat torsion",
+        galleryCaption3: "Résultat traction",
+        galleryCaption4: "Résultat cisaillement",
 
         filesTitle: "Fichiers importants",
         file1: "Rapport d’analyse par éléments finis (PDF)",
