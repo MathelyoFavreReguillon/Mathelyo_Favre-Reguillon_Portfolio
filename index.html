@@ -600,6 +600,18 @@
       gap:1rem;
     }
 
+    .inline-link{
+      color:var(--red);
+      font-weight:700;
+      text-decoration:none;
+      border-bottom:1px solid rgba(214,0,0,.25);
+      transition:.2s ease;
+    }
+
+    .inline-link:hover{
+      border-bottom-color:var(--red);
+    }
+
     .skills-layout{
       display:grid;
       gap:2rem;
@@ -1081,7 +1093,12 @@
           <h2 data-i18n="racingTitle">EPFL Racing Team</h2>
 
           <p data-i18n="racingLead">
-            EPFL Racing Team is a student-led engineering project developing a fully electric and autonomous Formula Student race car, combining design, manufacturing and competition in a high-performance environment.
+            EPFL Racing Team is a student-led engineering project that designs, manufactures and races a fully electric and autonomous Formula Student car. The project combines vehicle development, testing, manufacturing and competition in a demanding environment that closely reflects real engineering teamwork.
+          </p>
+
+          <p data-i18n="racingLead2">
+            It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website:
+            <a class="inline-link" href="https://epflracingteam.ch/fr/" target="_blank" rel="noopener noreferrer">epflracingteam.ch</a>.
           </p>
 
           <div class="project-feature">
@@ -1089,7 +1106,7 @@
               <h3 data-i18n="racingSubtitle">From technical contribution to team leadership</h3>
 
               <p data-i18n="racingText1">
-                During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a lightweight, rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.
+                During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.
               </p>
 
               <p data-i18n="racingText2">
@@ -1113,6 +1130,7 @@
 
               <div class="section-actions">
                 <a class="btn" href="projects/epfl-racing-team.html" data-i18n="racingBtn">Click to discover more</a>
+                <a class="btn-outline" href="https://epflracingteam.ch/fr/" target="_blank" rel="noopener noreferrer" data-i18n="racingSiteBtn">Team website</a>
               </div>
             </div>
 
@@ -1342,7 +1360,7 @@
         <div class="card">
           <h2 data-i18n="skillsTitle">Skills and Expertise</h2>
           <p class="lead lead-full" data-i18n="skillsLead">
-            My profile combines technical engineering skills, hands-on prototyping experience and strong interpersonal abilities.
+            My profile combines technical engineering skills, hands-on prototyping experience and strong collaborative abilities.
             I enjoy moving from concept to execution, whether through design, simulation, manufacturing or teamwork in demanding environments.
           </p>
 
@@ -1512,7 +1530,9 @@
               <div><p data-i18n="country"></p></div>
               <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
               <div><a href="mailto:mathelyo.favrereguillon@gmail.com">mathelyo.favrereguillon@gmail.com</a></div>
-              <div>@mathelyo favre-reguillon</div>
+              <div>
+                <a href="https://www.linkedin.com/in/mathelyo-favre-reguillon-556341243/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdatiT3mWSQuK0xoTsgAMBw%3D%3D" target="_blank" rel="noopener noreferrer">@mathelyo favre-reguillon</a>
+              </div>
             </div>
           </div>
 
@@ -1589,9 +1609,10 @@
         aboutCvBtn: "Download my CV",
 
         racingTitle: "EPFL Racing Team",
-        racingLead: "EPFL Racing Team is a student-led engineering project developing a fully electric and autonomous Formula Student race car, combining design, manufacturing and competition in a high-performance environment.",
+        racingLead: "EPFL Racing Team is a student-led engineering project that designs, manufactures and races a fully electric and autonomous Formula Student car. The project combines vehicle development, testing, manufacturing and competition in a demanding environment that closely reflects real engineering teamwork.",
+        racingLead2: "It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website:",
         racingSubtitle: "From technical contribution to team leadership",
-        racingText1: "During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a lightweight, rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.",
+        racingText1: "During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.",
         racingText2: "In my second year, as Head of Monocoque and Layup Manufacturing, I led the production of the carbon monocoque and improved the electronic integration approach, while also developing validated inserts for composite and aluminium parts.",
         racingText3: "As Vice President, in parallel with my role as a technical lead, I contributed to team organization, logistics and strategic coordination. I supported the structuring of operations, from inventory and transport to planning and team coordination, while also being involved in decision-making, testing activities, competitions and key events.",
         racingStat2: "members involved in the student team",
@@ -1602,6 +1623,7 @@
         racingStat7: "participants at unveiling event",
         racingStat8: "annual budget involved",
         racingBtn: "Click to discover more",
+        racingSiteBtn: "Team website",
 
         projectsTitle: "Selected Projects",
         tagBachelor: "Bachelor Thesis",
@@ -1649,7 +1671,7 @@
         projectDataText: "Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.",
 
         skillsTitle: "Skills and Expertise",
-        skillsLead: "My profile combines strong technical engineering skills, hands-on prototyping experience and solid interpersonal abilities. I enjoy moving from concept to execution, through design, simulation, manufacturing and teamwork in demanding environments.",
+        skillsLead: "My profile combines strong technical engineering skills, hands-on prototyping experience and strong collaborative abilities. I enjoy moving from concept to execution, through design, simulation, manufacturing and teamwork in demanding environments.",
 
         softTitle: "Soft Skills",
         soft1Title: "Analytical thinking",
@@ -1765,9 +1787,10 @@
         aboutCvBtn: "Télécharger mon CV",
 
         racingTitle: "EPFL Racing Team",
-        racingLead: "EPFL Racing Team est un projet étudiant d’ingénierie dédié au développement d’une voiture de Formula Student entièrement électrique et autonome, combinant conception, fabrication et compétition dans un environnement exigeant.",
+        racingLead: "EPFL Racing Team est un projet étudiant d’ingénierie qui conçoit, fabrique et fait courir une voiture de Formula Student entièrement électrique et autonome. Le projet combine développement véhicule, essais, fabrication et compétition dans un environnement exigeant, très proche du fonctionnement d’une véritable équipe d’ingénierie.",
+        racingLead2: "L’équipe réunit des étudiants de plusieurs disciplines qui travaillent sur la voiture comme un système complet : châssis, aérodynamique, drivetrain, électronique, software, fabrication, essais, logistique et coordination de projet. Plus d’informations sont disponibles sur le site de l’équipe :",
         racingSubtitle: "De la contribution technique au leadership d’équipe",
-        racingText1: "Lors de ma première année, j’ai conçu et fabriqué l’ensemble du système d’intégration électronique en combinant matériaux composites, aluminium et impression 3D, afin d’obtenir une solution légère, rigide et étanche. J’ai également contribué à la fabrication de pièces composites majeures, dont la monocoque.",
+        racingText1: "Lors de ma première année, j’ai conçu et fabriqué l’ensemble du système d’intégration électronique en combinant matériaux composites, aluminium et impression 3D, afin d’obtenir une solution rigide et étanche. J’ai également contribué à la fabrication de pièces composites majeures, dont la monocoque.",
         racingText2: "Lors de ma deuxième année, en tant que responsable Monocoque et Layup Manufacturing, j’ai piloté la production de la monocoque carbone et amélioré l’approche d’intégration électronique, tout en développant de nouveaux inserts validés pour les pièces carbone et aluminium.",
         racingText3: "En tant que Vice-Président, en parallèle de mon rôle de responsable technique, j’ai contribué à l’organisation, à la logistique et à la coordination globale de l’équipe. J’ai participé à la structuration des opérations, de la gestion des stocks et transports à la planification et la coordination, tout en prenant part aux décisions stratégiques, aux phases de tests, aux compétitions et aux événements clés.",
         racingStat2: "membres impliqués dans l’équipe",
@@ -1778,6 +1801,7 @@
         racingStat7: "participants à l’événement",
         racingStat8: "budget annuel impliqué",
         racingBtn: "Découvrir le projet",
+        racingSiteBtn: "Site de l’équipe",
 
         projectsTitle: "Projets sélectionnés",
         tagBachelor: "Projet de Bachelor",
@@ -1825,7 +1849,7 @@
         projectDataText: "Projet semestriel centré sur la mesure, l’acquisition de signaux et le traitement de données expérimentales pour l’analyse et la compréhension de systèmes d’ingénierie.",
 
         skillsTitle: "Compétences et expertise",
-        skillsLead: "Mon profil combine de solides compétences techniques en ingénierie, une forte expérience terrain en prototypage et des capacités relationnelles développées. J’aime aller du concept à la réalisation, en passant par la conception, la simulation, la fabrication et le travail en équipe dans des environnements exigeants.",
+        skillsLead: "Mon profil combine de solides compétences techniques en ingénierie, une forte expérience terrain en prototypage et de solides capacités de collaboration. J’aime aller du concept à la réalisation, en passant par la conception, la simulation, la fabrication et le travail en équipe dans des environnements exigeants.",
 
         softTitle: "Compétences humaines",
         soft1Title: "Esprit analytique",
