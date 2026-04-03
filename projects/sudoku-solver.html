@@ -72,7 +72,8 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:860px;
+      width:100%;
+      max-width:none;
     }
 
     .tag{
@@ -134,6 +135,7 @@
       padding:.8rem;
       min-height:320px;
       display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
     }
@@ -146,6 +148,14 @@
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .caption{
+      width:100%;
+      margin-top:.7rem;
+      font-size:.95rem;
+      color:var(--muted);
+      text-align:left;
     }
 
     .files{
@@ -206,10 +216,10 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="sudokuTag">EPFL · Image Processing · LabVIEW / C / MATLAB</div>
+        <div class="tag" data-i18n="sudokuTag">EPFL · Programming for Engineers · ME-213</div>
         <h1 data-i18n="sudokuTitle">Sudoku Solver</h1>
         <p class="lead" data-i18n="sudokuLead">
-          Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically.
+          Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically. This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user. The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.
         </p>
       </div>
     </section>
@@ -223,16 +233,6 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="sudokuOverviewTitle">Project Overview</h2>
-          <p data-i18n="sudokuOverviewText1">
-            This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user.
-          </p>
-          <p class="muted" data-i18n="sudokuOverviewText2">
-            The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.
-          </p>
-        </div>
-
-        <div class="card">
           <h2 data-i18n="sudokuContribTitle">Key Contributions</h2>
           <ul>
             <li data-i18n="sudokuContrib1">Image reading and grid extraction in LabVIEW</li>
@@ -241,6 +241,16 @@
             <li data-i18n="sudokuContrib4">Connection of the full software pipeline</li>
             <li data-i18n="sudokuContrib5">Automatic generation of the solved output</li>
           </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="sudokuPipelineTitle">System Architecture</h2>
+          <p data-i18n="sudokuPipelineText1">
+            The project was built as a multi-software pipeline in which each environment had a dedicated role, from image preprocessing to final Sudoku resolution.
+          </p>
+          <p class="muted" data-i18n="sudokuPipelineText2">
+            This structure made it possible to separate image analysis, digit recognition and solving logic while ensuring reliable data transfer between the different modules.
+          </p>
         </div>
       </div>
     </section>
@@ -275,10 +285,12 @@
         <h2 data-i18n="sudokuGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/Sudoku1.png" alt="Sudoku Solver gallery image 1">
+            <img src="../photos/Sudoku1.png" alt="Sudoku overflow">
+            <p class="caption" data-i18n="sudokuCaption1">Sudoku overflow</p>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Sudoku2.png" alt="Sudoku Solver gallery image 2">
+            <img src="../photos/Sudoku2.png" alt="Overview of 3 codes">
+            <p class="caption" data-i18n="sudokuCaption2">Overview of 3 codes</p>
           </div>
         </div>
       </div>
@@ -300,13 +312,9 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        sudokuTag: "EPFL · Image Processing · LabVIEW / C / MATLAB",
+        sudokuTag: "EPFL · Programming for Engineers · ME-213",
         sudokuTitle: "Sudoku Solver",
-        sudokuLead: "Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically.",
-
-        sudokuOverviewTitle: "Project Overview",
-        sudokuOverviewText1: "This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user.",
-        sudokuOverviewText2: "The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.",
+        sudokuLead: "Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically. This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user. The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.",
 
         sudokuContribTitle: "Key Contributions",
         sudokuContrib1: "Image reading and grid extraction in LabVIEW",
@@ -314,6 +322,10 @@
         sudokuContrib3: "Integration of a MATLAB solving script",
         sudokuContrib4: "Connection of the full software pipeline",
         sudokuContrib5: "Automatic generation of the solved output",
+
+        sudokuPipelineTitle: "System Architecture",
+        sudokuPipelineText1: "The project was built as a multi-software pipeline in which each environment had a dedicated role, from image preprocessing to final Sudoku resolution.",
+        sudokuPipelineText2: "This structure made it possible to separate image analysis, digit recognition and solving logic while ensuring reliable data transfer between the different modules.",
 
         sudokuWorkflowTitle: "Workflow",
         sudokuWorkflowText1: "The input image is checked, converted and split into 81 cells. Each cell is then analyzed to identify the corresponding digit.",
@@ -327,6 +339,8 @@
         sudokuTech5: "Final output generation in a complete pipeline",
 
         sudokuGalleryTitle: "Image Gallery",
+        sudokuCaption1: "Sudoku overflow",
+        sudokuCaption2: "Overview of 3 codes",
 
         sudokuFilesTitle: "Important Files",
         sudokuFile1: "Project report (PDF)",
@@ -336,13 +350,9 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        sudokuTag: "EPFL · Traitement d’image · LabVIEW / C / MATLAB",
+        sudokuTag: "EPFL · Programmation pour ingénieur · ME-213",
         sudokuTitle: "Sudoku Solver",
-        sudokuLead: "Développement d’un solveur de Sudoku modulaire capable de lire une grille à partir d’une image JPG fournie par l’utilisateur, de reconnaître chaque chiffre, de résoudre la grille et de générer automatiquement le résultat final.",
-
-        sudokuOverviewTitle: "Vue d’ensemble du projet",
-        sudokuOverviewText1: "Ce projet portait sur la résolution automatique d’une grille de Sudoku 9×9 à partir d’une image JPG fournie par l’utilisateur.",
-        sudokuOverviewText2: "La chaîne de traitement combine LabVIEW pour le traitement d’image, un exécutable en C pour la reconnaissance des chiffres, et MATLAB pour la résolution et la génération du résultat final.",
+        sudokuLead: "Développement d’un solveur de Sudoku modulaire capable de lire une grille à partir d’une image JPG fournie par l’utilisateur, de reconnaître chaque chiffre, de résoudre la grille et de générer automatiquement le résultat final. Ce projet portait sur la résolution automatique d’une grille de Sudoku 9×9 à partir d’une image JPG fournie par l’utilisateur. La chaîne de traitement combine LabVIEW pour le traitement d’image, un exécutable en C pour la reconnaissance des chiffres, et MATLAB pour la résolution et la génération du résultat final.",
 
         sudokuContribTitle: "Contributions clés",
         sudokuContrib1: "Lecture de l’image et extraction de la grille sous LabVIEW",
@@ -350,6 +360,10 @@
         sudokuContrib3: "Intégration d’un script MATLAB de résolution",
         sudokuContrib4: "Connexion de l’ensemble de la pipeline logicielle",
         sudokuContrib5: "Génération automatique du résultat résolu",
+
+        sudokuPipelineTitle: "Architecture du système",
+        sudokuPipelineText1: "Le projet a été construit comme une pipeline multi-logicielle dans laquelle chaque environnement assurait un rôle dédié, du prétraitement de l’image jusqu’à la résolution finale du Sudoku.",
+        sudokuPipelineText2: "Cette structure a permis de séparer l’analyse d’image, la reconnaissance des chiffres et la logique de résolution tout en garantissant un échange fiable des données entre les différents modules.",
 
         sudokuWorkflowTitle: "Fonctionnement",
         sudokuWorkflowText1: "L’image d’entrée est vérifiée, convertie puis découpée en 81 cellules. Chaque case est ensuite analysée afin d’identifier le chiffre correspondant.",
@@ -363,6 +377,8 @@
         sudokuTech5: "Génération finale du résultat dans une pipeline complète",
 
         sudokuGalleryTitle: "Galerie d’images",
+        sudokuCaption1: "Vue d’ensemble du Sudoku",
+        sudokuCaption2: "Vue d’ensemble des 3 codes",
 
         sudokuFilesTitle: "Fichiers importants",
         sudokuFile1: "Rapport du projet (PDF)",
@@ -394,4 +410,4 @@
     });
   </script>
 </body>
-</html>   
+</html>
