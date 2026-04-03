@@ -73,7 +73,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:860px;
+      max-width:none;
     }
 
     .tag{
@@ -135,8 +135,10 @@
       padding:.8rem;
       min-height:320px;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:center;
+      justify-content:flex-start;
+      gap:.8rem;
     }
 
     .gallery img{
@@ -147,6 +149,14 @@
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .gallery-caption{
+      width:100%;
+      text-align:center;
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.4;
     }
 
     .files{
@@ -207,10 +217,10 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="dominoTag">EPFL · Mechanical Design Project · ME-102</div>
+        <div class="tag" data-i18n="dominoTag">EPFL · Construction Mécanique · ME-102</div>
         <h1 data-i18n="dominoTitle">Domino Placement Machine</h1>
         <p class="lead" data-i18n="dominoLead">
-          Design and development of a manually actuated machine capable of placing dominos at a regular interval in straight lines and curves, while combining storage, steering and synchronized deposition mechanisms into one compact mechanical system.
+          This project was carried out as part of the Mechanical Construction course at EPFL and focused on the complete design of a domino placement machine developed over 14 weeks. The goal was to create a machine able to place dominos one by one with a regular spacing, while remaining compact, manually operated, mechanically reliable and compatible with both straight and curved trajectories.
         </p>
       </div>
     </section>
@@ -224,16 +234,6 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="dominoOverviewTitle">Project Overview</h2>
-          <p data-i18n="dominoOverviewText1">
-            This project was carried out as part of the Mechanical Construction course at EPFL and focused on the complete design of a domino placement machine developed over 14 weeks.
-          </p>
-          <p class="muted" data-i18n="dominoOverviewText2">
-            The goal was to create a machine able to place dominos one by one with a regular spacing, while remaining compact, manually operated, mechanically reliable and compatible with both straight and curved trajectories.
-          </p>
-        </div>
-
-        <div class="card">
           <h2 data-i18n="dominoContribTitle">Key Contributions</h2>
           <ul>
             <li data-i18n="dominoContrib1">Concept generation and comparison for storage, steering and deposition systems</li>
@@ -243,11 +243,7 @@
             <li data-i18n="dominoContrib5">Contribution to full documentation including assembly logic and user operation</li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="dominoSpecsTitle">Initial Specifications</h2>
           <p data-i18n="dominoSpecsText1">
@@ -255,16 +251,6 @@
           </p>
           <p class="muted" data-i18n="dominoSpecsText2">
             Additional constraints included a maximum height of 300 mm, a mass below 3 kg, one-handed operation, easy reloading, and compatibility with a minimum free-turn radius of 200 mm.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="dominoChallengeTitle">Engineering Challenge</h2>
-          <p data-i18n="dominoChallengeText1">
-            The core challenge was to combine three major functions into one coherent system: storage of the dominos, controlled steering of the machine, and precise deposition with regular spacing.
-          </p>
-          <p class="muted" data-i18n="dominoChallengeText2">
-            The final concept had to remain compact and manufacturable while avoiding blockage, preserving stability, and ensuring that placement accuracy was not affected by trajectory changes.
           </p>
         </div>
       </div>
@@ -349,16 +335,20 @@
         <h2 data-i18n="dominoGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/Domino1.png" alt="Domino project gallery image 1">
+            <img src="../photos/Domino1.png" alt="Overall mechanism">
+            <div class="gallery-caption" data-i18n="dominoCaption1">Overall mechanism</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Domino2.png" alt="Domino project gallery image 2">
+            <img src="../photos/Domino2.png" alt="Steering mechanism">
+            <div class="gallery-caption" data-i18n="dominoCaption2">Steering mechanism</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Domino3.png" alt="Domino project gallery image 3">
+            <img src="../photos/Domino3.png" alt="Reservoir technical 2D drawing">
+            <div class="gallery-caption" data-i18n="dominoCaption3">Reservoir technical 2D drawing</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Domino4.png" alt="Domino project gallery image 4">
+            <img src="../photos/Domino4.png" alt="Assembly manual step">
+            <div class="gallery-caption" data-i18n="dominoCaption4">Assembly manual step</div>
           </div>
         </div>
       </div>
@@ -379,13 +369,9 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        dominoTag: "EPFL · Mechanical Design Project · ME-102",
+        dominoTag: "EPFL · Construction Mécanique · ME-102",
         dominoTitle: "Domino Placement Machine",
-        dominoLead: "Design and development of a manually actuated machine capable of placing dominos at a regular interval in straight lines and curves, while combining storage, steering and synchronized deposition mechanisms into one compact mechanical system.",
-
-        dominoOverviewTitle: "Project Overview",
-        dominoOverviewText1: "This project was carried out as part of the Mechanical Construction course at EPFL and focused on the complete design of a domino placement machine developed over 14 weeks.",
-        dominoOverviewText2: "The goal was to create a machine able to place dominos one by one with a regular spacing, while remaining compact, manually operated, mechanically reliable and compatible with both straight and curved trajectories.",
+        dominoLead: "This project was carried out as part of the Mechanical Construction course at EPFL and focused on the complete design of a domino placement machine developed over 14 weeks. The goal was to create a machine able to place dominos one by one with a regular spacing, while remaining compact, manually operated, mechanically reliable and compatible with both straight and curved trajectories.",
 
         dominoContribTitle: "Key Contributions",
         dominoContrib1: "Concept generation and comparison for storage, steering and deposition systems",
@@ -397,10 +383,6 @@
         dominoSpecsTitle: "Initial Specifications",
         dominoSpecsText1: "The machine had to store 50 dominos, place them vertically, maintain a spacing of 20 ± 1 mm, and work in straight lines as well as in fixed-radius and free steering modes.",
         dominoSpecsText2: "Additional constraints included a maximum height of 300 mm, a mass below 3 kg, one-handed operation, easy reloading, and compatibility with a minimum free-turn radius of 200 mm.",
-
-        dominoChallengeTitle: "Engineering Challenge",
-        dominoChallengeText1: "The core challenge was to combine three major functions into one coherent system: storage of the dominos, controlled steering of the machine, and precise deposition with regular spacing.",
-        dominoChallengeText2: "The final concept had to remain compact and manufacturable while avoiding blockage, preserving stability, and ensuring that placement accuracy was not affected by trajectory changes.",
 
         dominoConceptTitle: "Chosen Concept",
         dominoConcept1: "Two vertical magazines of 25 dominos each to satisfy the height constraint",
@@ -433,6 +415,10 @@
         dominoImpactText2: "Beyond the mechanism itself, the project was also a strong team-based design exercise involving planning, task distribution, iterative problem solving and technical communication through a full engineering report.",
 
         dominoGalleryTitle: "Image Gallery",
+        dominoCaption1: "Overall mechanism",
+        dominoCaption2: "Steering mechanism",
+        dominoCaption3: "Reservoir technical 2D drawing",
+        dominoCaption4: "Assembly manual step",
 
         dominoFilesTitle: "Important Files",
         dominoFile1: "Project report (PDF)"
@@ -441,13 +427,9 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        dominoTag: "EPFL · Projet de construction mécanique · ME-102",
+        dominoTag: "EPFL · Construction Mécanique · ME-102",
         dominoTitle: "Machine à dépose domino",
-        dominoLead: "Conception et développement d’une machine à actionnement manuel capable de déposer des dominos à intervalle régulier en ligne droite comme en virage, en combinant stockage, direction et mécanisme de dépose synchronisé dans un système mécanique compact.",
-
-        dominoOverviewTitle: "Vue d’ensemble du projet",
-        dominoOverviewText1: "Ce projet a été réalisé dans le cadre du cours de Construction Mécanique à l’EPFL et portait sur la conception complète d’une machine à dépose de dominos développée sur 14 semaines.",
-        dominoOverviewText2: "L’objectif était de créer une machine capable de poser les dominos un par un avec un espacement régulier, tout en restant compacte, manuelle, mécaniquement fiable et compatible avec les trajectoires droites comme courbes.",
+        dominoLead: "Ce projet a été réalisé dans le cadre du cours de Construction Mécanique à l’EPFL et portait sur la conception complète d’une machine à dépose de dominos développée sur 14 semaines. L’objectif était de créer une machine capable de poser les dominos un par un avec un espacement régulier, tout en restant compacte, manuelle, mécaniquement fiable et compatible avec les trajectoires droites comme courbes.",
 
         dominoContribTitle: "Contributions clés",
         dominoContrib1: "Génération et comparaison de concepts pour le stockage, la direction et la dépose",
@@ -459,10 +441,6 @@
         dominoSpecsTitle: "Cahier des charges",
         dominoSpecsText1: "La machine devait stocker 50 dominos, les poser verticalement, garantir un espacement de 20 ± 1 mm, et fonctionner en ligne droite aussi bien qu’en trajectoire libre ou à rayon fixe.",
         dominoSpecsText2: "Les contraintes incluaient également une hauteur maximale de 300 mm, une masse inférieure à 3 kg, une utilisation à une main, un rechargement simple, et une compatibilité avec un rayon minimal de 200 mm en mode libre.",
-
-        dominoChallengeTitle: "Défi d’ingénierie",
-        dominoChallengeText1: "Le défi principal consistait à réunir trois fonctions majeures dans un seul système cohérent : le stockage des dominos, le guidage de la machine et la dépose précise avec espacement régulier.",
-        dominoChallengeText2: "Le concept final devait rester compact et usinable tout en évitant les blocages, en conservant une bonne stabilité, et en garantissant que la précision de pose ne soit pas affectée par les changements de trajectoire.",
 
         dominoConceptTitle: "Concept retenu",
         dominoConcept1: "Deux chargeurs verticaux de 25 dominos chacun pour respecter la contrainte de hauteur",
@@ -495,6 +473,10 @@
         dominoImpactText2: "Au-delà du mécanisme lui-même, ce projet a aussi représenté un fort exercice de conception en équipe, avec planification, répartition du travail, résolution itérative de problèmes et communication technique à travers un rapport complet.",
 
         dominoGalleryTitle: "Galerie d’images",
+        dominoCaption1: "Mécanisme global",
+        dominoCaption2: "Mécanisme de direction",
+        dominoCaption3: "Dessin 2D technique du réservoir",
+        dominoCaption4: "Étape de notice de montage",
 
         dominoFilesTitle: "Fichiers importants",
         dominoFile1: "Rapport du projet (PDF)"
