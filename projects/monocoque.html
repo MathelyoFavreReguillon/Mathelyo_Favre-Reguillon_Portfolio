@@ -132,10 +132,14 @@
       border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
       padding:.8rem;
+    }
+
+    .gallery-media{
       min-height:320px;
       display:flex;
       align-items:center;
       justify-content:center;
+      margin-bottom:.75rem;
     }
 
     .gallery img{
@@ -146,6 +150,12 @@
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.45;
     }
 
     .files{
@@ -186,7 +196,7 @@
         height:320px;
       }
 
-      .gallery-item{
+      .gallery-media{
         min-height:260px;
       }
 
@@ -206,10 +216,13 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="bachelorTag">EPFL · Bachelor Project · EPFL Racing Team</div>
+        <div class="tag" data-i18n="bachelorTag">EPFL · Bachelor Thesis · ME-314 · EPFL Racing Team</div>
         <h1 data-i18n="bachelorTitle">Composite Insert Optimization</h1>
         <p class="lead" data-i18n="bachelorLead">
           Characterization and optimization of inserts for a composite sandwich monocoque, with the objective of improving structural reliability, reducing mass, simplifying manufacturing, and standardizing integration methods for the EPFL Racing Team Formula Student car.
+        </p>
+        <p class="lead muted" data-i18n="bachelorLead2">
+          The project combined CAD development, finite element simulation, comparison of insert families, and a broader engineering reflection on manufacturability, repeatability and structural integration within a high-performance composite chassis.
         </p>
       </div>
     </section>
@@ -217,31 +230,6 @@
     <section class="section">
       <div class="container hero-image">
         <img src="../photos/Insert1.png" alt="Bachelor project main visual">
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="bachelorOverviewTitle">Project Overview</h2>
-          <p data-i18n="bachelorOverviewText1">
-            This bachelor project focused on the characterization and optimization of mechanical inserts integrated into the carbon composite sandwich monocoque of the EPFL Racing Team Formula Student car.
-          </p>
-          <p class="muted" data-i18n="bachelorOverviewText2">
-            The work combined CAD development, finite element simulation, theoretical comparison of insert families, and a broader reflection on manufacturability, repeatability and structural integration.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="bachelorContribTitle">Key Contributions</h2>
-          <ul>
-            <li data-i18n="bachelorContrib1">Analysis of existing insert solutions used on the monocoque</li>
-            <li data-i18n="bachelorContrib2">Optimization work on in-production and post-production inserts</li>
-            <li data-i18n="bachelorContrib3">Development of CAD and FEM-based design comparison methodology</li>
-            <li data-i18n="bachelorContrib4">Mass, stiffness and manufacturability trade-off analysis</li>
-            <li data-i18n="bachelorContrib5">Contribution to standardization and long-term technical documentation</li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -272,31 +260,16 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="bachelorSystemTitle">Insert Strategy</h2>
+          <h2 data-i18n="bachelorStrategyTitle">Insert Strategy & Contributions</h2>
           <ul>
-            <li data-i18n="bachelorSystem1">Study of both in-production inserts integrated during layup and post-production inserts added afterward</li>
-            <li data-i18n="bachelorSystem2">Documentation of historical insert solutions and their limitations</li>
-            <li data-i18n="bachelorSystem3">Comparison of different geometries, materials and manufacturing approaches</li>
-            <li data-i18n="bachelorSystem4">Objective of moving toward a more homogeneous and reproducible insert logic</li>
-            <li data-i18n="bachelorSystem5">Evaluation of mechanical behavior together with production constraints</li>
+            <li data-i18n="bachelorStrategy1">Analysis of the insert solutions historically used on the monocoque and identification of their limitations</li>
+            <li data-i18n="bachelorStrategy2">Study of both in-production inserts integrated during layup and post-production inserts added afterward</li>
+            <li data-i18n="bachelorStrategy3">Development of a CAD and FEM-based comparison methodology for different insert concepts</li>
+            <li data-i18n="bachelorStrategy4">Comparison of geometries, materials, mass, stiffness and manufacturability</li>
+            <li data-i18n="bachelorStrategy5">Contribution to a more homogeneous, reproducible and better documented insert strategy for future seasons</li>
           </ul>
         </div>
 
-        <div class="card">
-          <h2 data-i18n="bachelorFindingsTitle">Main Findings</h2>
-          <ul>
-            <li data-i18n="bachelorFindings1">Past in-prod inserts were structurally effective but too heterogeneous and complex</li>
-            <li data-i18n="bachelorFindings2">Post-prod inserts required better characterization in terms of mass, adhesive and installation</li>
-            <li data-i18n="bachelorFindings3">A 15 mm external diameter emerged as the best compromise for the first optimized design</li>
-            <li data-i18n="bachelorFindings4">The first design remained the strongest compromise between mass, rigidity and ease of production</li>
-            <li data-i18n="bachelorFindings5">Simulation methodology now provides a reusable basis for future insert developments</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="bachelorSimulationTitle">Simulation & Validation</h2>
           <p data-i18n="bachelorSimulationText1">
@@ -306,7 +279,11 @@
             The work included von Mises stress evaluation for metallic inserts, displacement analysis, and later Tsai-Wu and Tsai-Hill criteria for composite failure assessment in the sandwich structure.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="bachelorPerformanceTitle">Performance Highlights</h2>
           <ul>
@@ -317,11 +294,7 @@
             <li data-i18n="bachelorPerformance5">Results remained clearly below critical composite failure thresholds</li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="bachelorManufacturingTitle">Manufacturing Perspective</h2>
           <p data-i18n="bachelorManufacturingText1">
@@ -331,7 +304,11 @@
             One major outcome was that some lighter designs were mechanically attractive but not justified once production complexity and outsourcing requirements were considered.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="bachelorImpactTitle">Project Impact</h2>
           <p data-i18n="bachelorImpactText1">
@@ -341,6 +318,17 @@
             It also provides a clearer framework for future validation work, including adhesive modelling, experimental pull-out testing, localized composite reinforcement optimization and broader CAD library standardization.
           </p>
         </div>
+
+        <div class="card">
+          <h2 data-i18n="bachelorFindingsTitle">Main Findings</h2>
+          <ul>
+            <li data-i18n="bachelorFindings1">Past in-production inserts were structurally effective but too heterogeneous and complex</li>
+            <li data-i18n="bachelorFindings2">Post-production inserts required better characterization in terms of mass, adhesive and installation</li>
+            <li data-i18n="bachelorFindings3">A 15 mm external diameter emerged as the best compromise for the first optimized design</li>
+            <li data-i18n="bachelorFindings4">The first design remained the strongest compromise between mass, rigidity and ease of production</li>
+            <li data-i18n="bachelorFindings5">The simulation methodology now provides a reusable basis for future insert developments</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -349,22 +337,45 @@
         <h2 data-i18n="bachelorGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/Bachelor1.png" alt="Bachelor project gallery image 1">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor1.png" alt="Bachelor project gallery image 1">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption1">Image 1 — Complete monocoque</div>
           </div>
+
           <div class="gallery-item">
-            <img src="../photos/Bachelor2.PNG" alt="Bachelor project gallery image 2">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor2.PNG" alt="Bachelor project gallery image 2">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption2">Image 2 — Full set of inserts in the initial context</div>
           </div>
+
           <div class="gallery-item">
-            <img src="../photos/Bachelor3.png" alt="Bachelor project gallery image 3">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor3.png" alt="Bachelor project gallery image 3">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption3">Image 3 — Simulation of the complete monocoque layup</div>
           </div>
+
           <div class="gallery-item">
-            <img src="../photos/Bachelor4.PNG" alt="Bachelor project gallery image 4">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor4.PNG" alt="Bachelor project gallery image 4">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption4">Image 4 — Simulation of design 1</div>
           </div>
+
           <div class="gallery-item">
-            <img src="../photos/Bachelor5.png" alt="Bachelor project gallery image 5">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor5.png" alt="Bachelor project gallery image 5">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption5">Image 5 — Simulation of design 2</div>
           </div>
+
           <div class="gallery-item">
-            <img src="../photos/Bachelor6.png" alt="Bachelor project gallery image 6">
+            <div class="gallery-media">
+              <img src="../photos/Bachelor6.png" alt="Bachelor project gallery image 6">
+            </div>
+            <div class="caption" data-i18n="bachelorCaption6">Image 6 — Post-production insert</div>
           </div>
         </div>
       </div>
@@ -385,20 +396,10 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        bachelorTag: "EPFL · Bachelor Project · EPFL Racing Team",
+        bachelorTag: "EPFL · Bachelor Thesis · ME-314 · EPFL Racing Team",
         bachelorTitle: "Composite Insert Optimization",
         bachelorLead: "Characterization and optimization of inserts for a composite sandwich monocoque, with the objective of improving structural reliability, reducing mass, simplifying manufacturing, and standardizing integration methods for the EPFL Racing Team Formula Student car.",
-
-        bachelorOverviewTitle: "Project Overview",
-        bachelorOverviewText1: "This bachelor project focused on the characterization and optimization of mechanical inserts integrated into the carbon composite sandwich monocoque of the EPFL Racing Team Formula Student car.",
-        bachelorOverviewText2: "The work combined CAD development, finite element simulation, theoretical comparison of insert families, and a broader reflection on manufacturability, repeatability and structural integration.",
-
-        bachelorContribTitle: "Key Contributions",
-        bachelorContrib1: "Analysis of existing insert solutions used on the monocoque",
-        bachelorContrib2: "Optimization work on in-production and post-production inserts",
-        bachelorContrib3: "Development of CAD and FEM-based design comparison methodology",
-        bachelorContrib4: "Mass, stiffness and manufacturability trade-off analysis",
-        bachelorContrib5: "Contribution to standardization and long-term technical documentation",
+        bachelorLead2: "The project combined CAD development, finite element simulation, comparison of insert families, and a broader engineering reflection on manufacturability, repeatability and structural integration within a high-performance composite chassis.",
 
         bachelorContextTitle: "Context",
         bachelorContextText1: "The EPFL Racing Team develops a new electric Formula Student race car each season, with the monocoque acting as the structural core of the chassis and supporting critical subsystems such as suspension, steering, safety structures and harness interfaces.",
@@ -408,19 +409,12 @@
         bachelorProblemText1: "Sandwich structures provide excellent stiffness-to-weight performance, but they remain highly sensitive to concentrated loads and direct mechanical fastening.",
         bachelorProblemText2: "The challenge was therefore to design inserts that remain lightweight and production-friendly while ensuring sufficient mechanical performance, precise integration and reliable load transfer into the composite monocoque.",
 
-        bachelorSystemTitle: "Insert Strategy",
-        bachelorSystem1: "Study of both in-production inserts integrated during layup and post-production inserts added afterward",
-        bachelorSystem2: "Documentation of historical insert solutions and their limitations",
-        bachelorSystem3: "Comparison of different geometries, materials and manufacturing approaches",
-        bachelorSystem4: "Objective of moving toward a more homogeneous and reproducible insert logic",
-        bachelorSystem5: "Evaluation of mechanical behavior together with production constraints",
-
-        bachelorFindingsTitle: "Main Findings",
-        bachelorFindings1: "Past in-prod inserts were structurally effective but too heterogeneous and complex",
-        bachelorFindings2: "Post-prod inserts required better characterization in terms of mass, adhesive and installation",
-        bachelorFindings3: "A 15 mm external diameter emerged as the best compromise for the first optimized design",
-        bachelorFindings4: "The first design remained the strongest compromise between mass, rigidity and ease of production",
-        bachelorFindings5: "Simulation methodology now provides a reusable basis for future insert developments",
+        bachelorStrategyTitle: "Insert Strategy & Contributions",
+        bachelorStrategy1: "Analysis of the insert solutions historically used on the monocoque and identification of their limitations",
+        bachelorStrategy2: "Study of both in-production inserts integrated during layup and post-production inserts added afterward",
+        bachelorStrategy3: "Development of a CAD and FEM-based comparison methodology for different insert concepts",
+        bachelorStrategy4: "Comparison of geometries, materials, mass, stiffness and manufacturability",
+        bachelorStrategy5: "Contribution to a more homogeneous, reproducible and better documented insert strategy for future seasons",
 
         bachelorSimulationTitle: "Simulation & Validation",
         bachelorSimulationText1: "The project relied heavily on 3DEXPERIENCE finite element simulations, starting from simplified insert-only models and progressing toward a more realistic plate model including composite skins, a detailed honeycomb core and insert integration.",
@@ -441,7 +435,20 @@
         bachelorImpactText1: "This work lays the foundation for a more robust and standardized insert strategy within the EPFL Racing Team, improving both the design process and the long-term transfer of technical knowledge between seasons.",
         bachelorImpactText2: "It also provides a clearer framework for future validation work, including adhesive modelling, experimental pull-out testing, localized composite reinforcement optimization and broader CAD library standardization.",
 
+        bachelorFindingsTitle: "Main Findings",
+        bachelorFindings1: "Past in-production inserts were structurally effective but too heterogeneous and complex",
+        bachelorFindings2: "Post-production inserts required better characterization in terms of mass, adhesive and installation",
+        bachelorFindings3: "A 15 mm external diameter emerged as the best compromise for the first optimized design",
+        bachelorFindings4: "The first design remained the strongest compromise between mass, rigidity and ease of production",
+        bachelorFindings5: "The simulation methodology now provides a reusable basis for future insert developments",
+
         bachelorGalleryTitle: "Image Gallery",
+        bachelorCaption1: "Image 1 — Complete monocoque",
+        bachelorCaption2: "Image 2 — Full set of inserts in the initial context",
+        bachelorCaption3: "Image 3 — Simulation of the complete monocoque layup",
+        bachelorCaption4: "Image 4 — Simulation of design 1",
+        bachelorCaption5: "Image 5 — Simulation of design 2",
+        bachelorCaption6: "Image 6 — Post-production insert",
 
         bachelorFilesTitle: "Important Files",
         bachelorFile1: "Bachelor report (PDF)"
@@ -450,20 +457,10 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        bachelorTag: "EPFL · Projet de Bachelor · EPFL Racing Team",
+        bachelorTag: "EPFL · Bachelor Thesis · ME-314 · EPFL Racing Team",
         bachelorTitle: "Optimisation d’inserts composites",
         bachelorLead: "Caractérisation et optimisation d’inserts pour une monocoque sandwich composite, avec pour objectif d’améliorer la fiabilité structurelle, de réduire la masse, de simplifier la fabrication et de standardiser les méthodes d’intégration pour la Formula Student de l’EPFL Racing Team.",
-
-        bachelorOverviewTitle: "Vue d’ensemble du projet",
-        bachelorOverviewText1: "Ce projet de Bachelor portait sur la caractérisation et l’optimisation des inserts mécaniques intégrés à la monocoque sandwich carbone de la voiture de Formula Student de l’EPFL Racing Team.",
-        bachelorOverviewText2: 'Le travail a combiné développement CAO, simulation par éléments finis, comparaison théorique de familles d’inserts et réflexion plus large sur la fabricabilité, la répétabilité et l’intégration structurelle.',
-
-        bachelorContribTitle: "Contributions clés",
-        bachelorContrib1: "Analyse des solutions d’inserts existantes utilisées sur la monocoque",
-        bachelorContrib2: "Travail d’optimisation sur les inserts in-production et post-production",
-        bachelorContrib3: "Développement d’une méthodologie de comparaison basée sur la CAO et la FEM",
-        bachelorContrib4: "Analyse des compromis entre masse, rigidité et fabricabilité",
-        bachelorContrib5: "Contribution à la standardisation et à la documentation technique long terme",
+        bachelorLead2: "Le projet a combiné développement CAO, simulation par éléments finis, comparaison de familles d’inserts et réflexion d’ingénierie plus large sur la fabricabilité, la répétabilité et l’intégration structurelle dans un châssis composite haute performance.",
 
         bachelorContextTitle: "Contexte",
         bachelorContextText1: "L’EPFL Racing Team développe chaque saison une nouvelle voiture électrique de Formula Student, dont la monocoque constitue le cœur structurel du châssis et supporte des sous-systèmes critiques comme la suspension, la direction, les structures de sécurité et les ancrages de harnais.",
@@ -473,19 +470,12 @@
         bachelorProblemText1: "Les structures sandwich offrent d’excellentes performances rigidité/masse, mais restent très sensibles aux charges concentrées et aux fixations mécaniques directes.",
         bachelorProblemText2: "Le défi consistait donc à concevoir des inserts à la fois légers et compatibles avec la production, tout en garantissant des performances mécaniques suffisantes, une intégration précise et un transfert fiable des efforts dans la monocoque composite.",
 
-        bachelorSystemTitle: "Stratégie sur les inserts",
-        bachelorSystem1: "Étude des inserts intégrés pendant la fabrication et des inserts ajoutés après production",
-        bachelorSystem2: "Documentation des solutions historiques et de leurs limites",
-        bachelorSystem3: "Comparaison de différentes géométries, matériaux et approches de fabrication",
-        bachelorSystem4: "Objectif d’aller vers une logique d’insert plus homogène et reproductible",
-        bachelorSystem5: "Évaluation du comportement mécanique en parallèle des contraintes de production",
-
-        bachelorFindingsTitle: "Résultats principaux",
-        bachelorFindings1: "Les anciens inserts in-prod étaient efficaces structurellement mais trop hétérogènes et complexes",
-        bachelorFindings2: "Les inserts post-prod nécessitaient une meilleure caractérisation en masse, colle et installation",
-        bachelorFindings3: "Un diamètre extérieur de 15 mm est apparu comme le meilleur compromis pour le premier design optimisé",
-        bachelorFindings4: "Le premier design est resté le compromis le plus solide entre masse, rigidité et facilité de production",
-        bachelorFindings5: "La méthodologie de simulation fournit désormais une base réutilisable pour les futurs développements",
+        bachelorStrategyTitle: "Stratégie inserts & contributions",
+        bachelorStrategy1: "Analyse des solutions d’inserts historiquement utilisées sur la monocoque et identification de leurs limites",
+        bachelorStrategy2: "Étude des inserts intégrés pendant la fabrication et des inserts ajoutés après production",
+        bachelorStrategy3: "Développement d’une méthodologie de comparaison basée sur la CAO et la FEM pour différents concepts d’inserts",
+        bachelorStrategy4: "Comparaison des géométries, matériaux, masses, rigidités et aspects de fabricabilité",
+        bachelorStrategy5: "Contribution à une stratégie d’inserts plus homogène, reproductible et mieux documentée pour les saisons suivantes",
 
         bachelorSimulationTitle: "Simulation et validation",
         bachelorSimulationText1: "Le projet s’est fortement appuyé sur des simulations par éléments finis sous 3DEXPERIENCE, en commençant par des modèles simplifiés d’insert seul avant d’évoluer vers un modèle plus réaliste intégrant les peaux composites, un cœur honeycomb détaillé et l’intégration de l’insert.",
@@ -506,7 +496,20 @@
         bachelorImpactText1: "Ce travail pose les bases d’une stratégie d’inserts plus robuste et standardisée au sein de l’EPFL Racing Team, en améliorant à la fois le processus de conception et le transfert de connaissances techniques entre saisons.",
         bachelorImpactText2: "Il fournit aussi un cadre plus clair pour les futurs travaux de validation, notamment sur la modélisation de la colle, les essais d’arrachement, l’optimisation des renforts composites locaux et la standardisation des bibliothèques CAO.",
 
+        bachelorFindingsTitle: "Résultats principaux",
+        bachelorFindings1: "Les anciens inserts in-production étaient efficaces structurellement mais trop hétérogènes et complexes",
+        bachelorFindings2: "Les inserts post-production nécessitaient une meilleure caractérisation en masse, colle et installation",
+        bachelorFindings3: "Un diamètre extérieur de 15 mm est apparu comme le meilleur compromis pour le premier design optimisé",
+        bachelorFindings4: "Le premier design est resté le compromis le plus solide entre masse, rigidité et facilité de production",
+        bachelorFindings5: "La méthodologie de simulation fournit désormais une base réutilisable pour les futurs développements",
+
         bachelorGalleryTitle: "Galerie d’images",
+        bachelorCaption1: "Image 1 — Monocoque complète",
+        bachelorCaption2: "Image 2 — Ensemble des inserts dans le contexte initial",
+        bachelorCaption3: "Image 3 — Simulation du layup complet de la monocoque",
+        bachelorCaption4: "Image 4 — Simulation design 1",
+        bachelorCaption5: "Image 5 — Simulation design 2",
+        bachelorCaption6: "Image 6 — Insert post-prod",
 
         bachelorFilesTitle: "Fichiers importants",
         bachelorFile1: "Rapport de Bachelor (PDF)"
